@@ -44,21 +44,29 @@ const App: FC = () => {
     const handleClick = () => {
         fetchData();
     };
-console.log(data);
+
 
     return (
         <div>
-            <h1>Abfrage Supporter {eingabe}</h1>
-            {data && data.data
-                .sort((a: any, b: any) => dayjs(a.startAt).unix() - dayjs(b.startAt).unix())
-                .map((entry: any, index: number) => (
-                    <div key={index}>
-                        <p><strong>Zeit: </strong>{dayjs(entry.startAt).locale('de').format('DD.MM.YYYY HH:mm')}</p>
-                        <p><strong>Treffpunkt: </strong>{waitingSpot[entry.waitingSpot]}</p>
-                        <br />
-                    </div>
-                ))
-            }
+            <div>
+                <h1>Supporter Schichtauskunft</h1>
+            </div>
+            <div>
+                <h2>Supporter Schichtinformation</h2>
+            </div>
+            <div>
+                {data && data.data
+                    .sort((a: any, b: any) => dayjs(a.startAt).unix() - dayjs(b.startAt).unix())
+                    .map((entry: any, index: number) => (
+                        <div className={"test"} key={index}>
+                            <p><strong>Zeit: </strong>{dayjs(entry.startAt).locale('de').format('DD.MM.YYYY HH:mm')} <strong>Treffpunkt: </strong>{waitingSpot[entry.waitingSpot]}</p>
+                            <br />
+                        </div>
+                    ))
+                }
+            </div>
+
+
 
             {/*Wird später durch NFC-Reader eingabe ersetzt*/}
             <div>

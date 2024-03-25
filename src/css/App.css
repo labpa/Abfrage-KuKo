@@ -3,6 +3,44 @@ body {
     background-color: white;
 }
 
-h1{
+/*h1{*/
+/*    color: black;*/
+/*    background-color: white;*/
+/*    width: HUG (1,144pxpx;*/
+/*    padding: 16px;*/
+/*    gap: 8px;*/
+
+/*    border: 1px solid red;*/
+/*}*/
+
+h1 {
     color: black;
+    background-color: white;
+    width: calc(100% - 144px); /* Corrected width value */
+    padding: 16px;
+    margin: 0; /* Added margin to ensure the h1 element doesn't have any default margin */
+    border: 1px solid red;
+    text-transform: uppercase;
+}
+
+
+
+h2{
+    color: white;
+    background-color: black;
+    width: 941px;
+    border: 1px solid red;
+}
+
+.test {
+    width: 941px;
+    height: 100px;
+    top: 369px;
+    left: 320px;
+    padding: 24px 32px 24px 32px;
+    margin-bottom: 20px; /* abstand zwischen den einzelnen Elementen*/
+    gap: 64px;
+    border-radius: 56px;
+    background-color: black;
+    color: white;
 }
