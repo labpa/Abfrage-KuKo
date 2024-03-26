@@ -1,20 +1,18 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import dayjs from "dayjs";
 import './css/App.css'
 import benzel from "../src/images/app/grafik 1.png"
 import Vector from '../src/images/app/Vector.png'
 import Karte from '../src/images/app/map.png'
 
-
 const App: FC = () => {
-    //data und eingabe werden deklariert
+    // Daten und Eingabe werden deklariert
     const [data, setData] = useState<any>(null);
     const [eingabe, setEingabe] = useState<string>("");
     const [test, setTest] = useState<boolean>(false);
-    // console.log(test);
 
-    //Array mit übersetzungen zu den Treffpunkten wird deklariert
-    const waitingSpot : Record<string, string> = {
+    // Array mit Übersetzungen zu den Treffpunkten wird deklariert
+    const waitingSpot: Record<string, string> = {
         bike: "Fahrrad",
         bottle: "Flasche",
         island: "Insel",
@@ -31,16 +29,26 @@ const App: FC = () => {
         window: "bitte erfragen"
     }
 
+
+    const days: Record<string, string> = {
+        Mon: "Mo, Mon",
+        Tue: "Di, Tue",
+        Wed: "Mi, Wed",
+        Thu: "Do, Thue",
+        Fri: "Fr, Fri",
+        Sat: "Sa, Sat",
+        Sun: "So, Sun"
+    }
+
     const fetchData = async () => {
         try {
-            if (eingabe.trim() !== "") { // Überprüfung, ob eingabe leer ist
+            if (eingabe.trim() !== "") { // Überprüfung, ob Eingabe leer ist
                 const ausgabe = await fetch(`https://supporter.kulturkosmos.de/api/self-service/shifts/${eingabe}`);
                 if (!ausgabe.ok) {
                     throw new Error('Fehler');
                 }
                 const jsonData = await ausgabe.json();
                 setData(jsonData);
-
             }
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -52,22 +60,19 @@ const App: FC = () => {
         setTest(true);
     };
 
-    //Neu Laden der Seite todo: Aktivieren wenn fertig :D
-    useEffect(() => {
-        if(test === true){
-            const reloadPage = setTimeout(()=> {
-                window.location.reload();
-            }, 10000);
-            return() => clearTimeout(reloadPage);
-        }
-
-    }, [test]);
-
+    // Neu laden der Seite todo: Aktivieren wenn fertig :D
+    // useEffect(() => {
+    //     if (test === true) {
+    //         const reloadPage = setTimeout(() => {
+    //             window.location.reload();
+    //         }, 10000);
+    //         return () => clearTimeout(reloadPage);
+    //     }
+    // }, [test]);
 
     return (
         <div>
-
-            <div className={"grundflaeche"}> {/*Dieses DIV beinhaltet die Grundfläche*/}
+            <div className={"grundflaeche"}>
                 <div className={"box"}>
                     {!test ? (
                         <div className={"kleinebox"}>
@@ -88,21 +93,18 @@ const App: FC = () => {
                                 .map((entry: any, index: number) => (
                                     <div className={"ausgabeabfrage"} key={index}>
                                         <p className={"index"}>{index + 1}</p>
-                                        <p className={"days"}> {dayjs(entry.startAt).locale('de').format('ddd // DD.MM - HH:mm')}</p>
+                                        <p className={"days"}>{days[dayjs(entry.startAt).format('ddd')]} // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
                                         <p className={"place"}> <img src={Vector} alt="Vector" className="Vector" />{waitingSpot[entry.waitingSpot]}</p>
                                         <br />
                                     </div>
                                 ))
                             }
-
-                            <img src={Karte} alt={"Karte"} className={"Karte"}/>
+                            <img src={Karte} alt={"Karte"} className={"Karte"} />
                         </div>
                     )}
                 </div>
             </div>
 
-
-            {/*Wird später durch NFC-Reader eingabe ersetzt*/}
             <div className={"wip"}>
                 <input
                     type="text"
@@ -112,15 +114,14 @@ const App: FC = () => {
                 />
                 <button onClick={handleClick}>Abfragen</button>
                 <button onClick={() => window.location.reload()}>Reset</button>
-                <button onClick={()=> setEingabe("0492131A757780")}>0492131A757780</button>
-                <button onClick={()=> setEingabe("04ABE51A757780")}>04ABE51A757780</button>
-                <button onClick={()=> setEingabe("048DCC1A757780")}>048DCC1A757780</button>
-                <button onClick={()=> setEingabe("04E0FD1A757780")} style={{backgroundColor: 'red'}}>04E0FD1A757780</button>
-                <button onClick={()=> setEingabe("049E0D1A757784")}>049E0D1A757784</button>
-                <button  onClick={()=> setEingabe("0433541A757780")}>0433541A757780</button>
-                <button onClick={()=> setEingabe("04BB2B6ABE6F80")}>04BB2B6ABE6F80</button>
+                <button onClick={() => setEingabe("0492131A757780")}>0492131A757780</button>
+                <button onClick={() => setEingabe("04ABE51A757780")}>04ABE51A757780</button>
+                <button onClick={() => setEingabe("048DCC1A757780")}>048DCC1A757780</button>
+                <button onClick={() => setEingabe("04E0FD1A757780")} style={{ backgroundColor: 'red' }}>04E0FD1A757780</button>
+                <button onClick={() => setEingabe("049E0D1A757784")}>049E0D1A757784</button>
+                <button onClick={() => setEingabe("0433541A757780")}>0433541A757780</button>
+                <button onClick={() => setEingabe("04BB2B6ABE6F80")}>04BB2B6ABE6F80</button>
             </div>
-
         </div>
     );
 };
