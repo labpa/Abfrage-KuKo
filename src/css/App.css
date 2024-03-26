@@ -1,46 +1,186 @@
-/* globalStyles.css */
-body {
-    background-color: white;
+/*ReloadStencil-Regular*/
+@font-face {
+    font-family: 'ReloadStencil-Regular';
+    src: url('../fonts/reload-stencil-regular.woff2') format('woff2'),
+    url('../fonts/reload-stencil-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/*h1{*/
-/*    color: black;*/
-/*    background-color: white;*/
-/*    width: HUG (1,144pxpx;*/
-/*    padding: 16px;*/
-/*    gap: 8px;*/
+/*inter-regular - latin*/
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/inter-v12-latin-regular.woff2') format('woff2');
+}
 
-/*    border: 1px solid red;*/
-/*}*/
-
-h1 {
-    color: black;
-    background-color: white;
-    width: calc(100% - 144px); /* Corrected width value */
-    padding: 16px;
-    margin: 0; /* Added margin to ensure the h1 element doesn't have any default margin */
+/*Grundfläche 1600px x 900px plus Hintergrundbild*/
+.grundflaeche{
+    width: 1600px;
+    height: 900px;
     border: 1px solid red;
-    text-transform: uppercase;
+    background-image: url('../images/app/supporter-sheme-3 1.png');
 }
 
-
-
+/*Supporter Schichtauskunft*/
 h2{
+    font-family: 'ReloadStencil-Regular', sans;
+    width: 940px;
+    height: 102px;
+    font-size: 64px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    line-height: 1.75;
+
+    /*border: 1px solid red;*/
+}
+
+/*Supporter Shiftinformation*/
+h3{
+    font-family: 'Inter', sans;
+    width: 710px;
+    height: 61px;
+    font-size: 54px;
+    color: white;
+    text-align: center;
+    background-color: black;
+    line-height: 1;
+    margin-top: -70px;
+
+    /*border: 1px solid blue;*/
+}
+
+/*Aufforderung zum Scannen in Deutsch*/
+.deutsch{
+    font-family: ReloadStencil-Regular, sans;
+    width: 900px !important;
+    height: 70px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 2;
+    background-color: white;
+
+    /*border: 1px solid red;*/
+
+/*Aufforderung zum Scannen in Englisch*/
+}
+.englisch{
+    font-family: 'Inter', sans;
+    width: 683px;
+    height: 61px;
+    font-size: 31px;
+    line-height: 2;
+    text-align: center;
     color: white;
     background-color: black;
-    width: 941px;
-    border: 1px solid red;
+    margin-top: -62px;
+    /*border: 1px solid blue;*/
+}
+.deutsch-ausgabe{
+    font-family: ReloadStencil-Regular, sans;
+    width: 351px;
+    height: 70px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 2;
+    background-color: white;
 }
 
-.test {
+.englisch-ausgabe{
+    font-family: 'Inter', sans;
+    width: 192px;
+    height: 61px;
+    font-size: 31px;
+    line-height: 2;
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-top: -62px;
+    /*border: 1px solid blue;*/
+}
+
+.ausgabeabfrage{
+    font-family: Inter, sans;
     width: 941px;
     height: 100px;
-    top: 369px;
-    left: 320px;
-    padding: 24px 32px 24px 32px;
-    margin-bottom: 20px; /* abstand zwischen den einzelnen Elementen*/
-    gap: 64px;
-    border-radius: 56px;
+    font-size: 24px;
     background-color: black;
+    /*text-align: center;*/
+    /*line-height: 4;*/
     color: white;
 }
+
+.index{
+    font-family: Inter, sans;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    color: black;
+    background-color: white;
+    float: left;
+    text-align: center;
+    line-height: 2;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.days{
+    margin-left: 150px;
+    line-height: 4;
+}
+
+.place {
+    text-align: end; /* Align text to the end of the container */
+    line-height: 1; /* Set a normal line height */
+    margin-right: 30px;
+    margin-top: -90px; /* Adjust the margin to align with other elements */
+}
+
+
+
+
+.kleinebox{
+    margin-left: 305px;
+    margin-top: 75px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.alternativebox{
+    margin-left: 80px;
+    margin-top: 75px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+
+}
+
+/*Bilder*/
+img.benzel{
+    width: 340px;
+    height: 340px;
+    border: 17px solid white;
+    margin-top: -30px;
+    margin-left: 255px;
+}
+img.Vector{
+    width: 19px;
+    height: 30px;
+    background-color: black;
+    border: none;
+    margin-right: 20px;
+}
+
+img.Karte{
+    width: 550px;
+    height: 903px;
+    margin-left: 971px;
+    margin-top: -799px;
+}
+
+
+
