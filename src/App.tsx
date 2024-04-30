@@ -9,7 +9,7 @@ const App: FC = () => {
     // Daten und Eingabe werden deklariert
     const [data, setData] = useState<any>(null);
     const [eingabe, setEingabe] = useState<string>("");
-    const [test, setTest] = useState<boolean>(false);
+    const [abfrage, setAbfrage] = useState<boolean>(false);
     const [warnung, setWarnung] = useState<boolean>(false);
     const now: dayjs.Dayjs = dayjs();
     const exampleDate = dayjs('2023-06-25'); //todo: exampleDate muss durch now ersetzt werden
@@ -18,7 +18,7 @@ const App: FC = () => {
     //Zeit nach der die Ausgabe beendet wird
     const falsch = 1;
     const normal = 10000; // 10 seconds
-    const lang = 15000; // 15 seconds
+    const lang = 18000; // 15 seconds
 
 
     // Array mit Übersetzungen zu den Treffpunkten wird deklariert
@@ -65,8 +65,13 @@ const App: FC = () => {
     };
 
     const handleClick = () => {
-        fetchData();
-        setTest(true);
+        if(eingabe !== ""){
+            fetchData();
+            setAbfrage(true);
+        }else {
+            alert("Leer nicht möglich")
+        }
+
     };
 
     // Neu laden der Seite todo: Aktivieren wenn fertig :D ÄNDERN
@@ -79,27 +84,27 @@ const App: FC = () => {
         if (data.data === null) {
             console.log("Kein Ergebniss bei der Abfrage");
             const timer = setTimeout(() => {
-                setTest(false);
+                setAbfrage(false);
                 window.location.reload();  //todo: dass muss anders auch gehen!!!
             }, falsch);
             return () => clearTimeout(timer);
         }
 
-        const timeoutDuration = test && !warnung ? normal : lang;
+        const timeoutDuration = abfrage && !warnung ? normal : lang;
 
         const timer = setTimeout(() => {
-            setTest(false);
+            setAbfrage(false);
         }, timeoutDuration);
 
         return () => clearTimeout(timer);
-    }, [test, data, warnung]);
+    }, [abfrage, data, warnung]);
 
 
     return (
         <div>
             <div className={"grundflaeche"}>
-                <div className={!test ? "box" : "box boxleft"}>
-                    {!test ? (
+                <div className={!abfrage ? "box" : "box boxleft"}>
+                    {!abfrage ? (
                         <>
                             <h2>Supporter Schichtauskunft</h2>
                             <h3>Supporter Shiftinformation</h3>
@@ -144,7 +149,7 @@ const App: FC = () => {
 
                     )}
                 </div>
-                <img src={Karte} alt={"Karte"} className={`Karte${test ? ' in' : ''}`}  />
+                <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' in' : ''}`}  />
             </div>
 
             <div className={"wip"}>
