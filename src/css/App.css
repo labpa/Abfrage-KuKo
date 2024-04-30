@@ -16,91 +16,133 @@
     src: url('../fonts/inter-v12-latin-regular.woff2') format('woff2');
 }
 
-/*Grundfläche 1600px x 900px plus Hintergrundbild*/
-.grundflaeche{
+/*Grundfläche*/
+.grundflaeche {
     width: 1600px;
     height: 900px;
-    border: 1px solid red;
     background-image: url('../images/app/supporter-sheme-3 1.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
 }
 
-/*Supporter Schichtauskunft*/
-h2{
-    font-family: 'ReloadStencil-Regular', sans;
+.warnung {
+    width: 940px;
+    height: 75px;
+    background-color: red;
+}
+.warnung-text{
+    font-family: 'Inter', sans-serif;
+    font-size: 54px;
+    color: white;
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%); /* Startpunkt der Animation */
+    }
+    to {
+        transform: translateX(-100%); /* Endpunkt der Animation */
+    }
+}
+
+
+
+
+
+
+
+h2 {
+    font-family: 'ReloadStencil-Regular', sans-serif;
     width: 940px;
     height: 102px;
     font-size: 64px;
     color: black;
     text-align: center;
     background-color: white;
-    line-height: 1.75;
-
     /*border: 1px solid red;*/
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
 
-/*Supporter Shiftinformation*/
-h3{
-    font-family: 'Inter', sans;
+
+h3 {
+    font-family: 'Inter', sans-serif;
     width: 710px;
-    height: 61px;
+    height: 75px;
     font-size: 54px;
     color: white;
     text-align: center;
     background-color: black;
-    line-height: 1;
     margin-top: -70px;
-
-    /*border: 1px solid blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/*Aufforderung zum Scannen in Deutsch*/
-.deutsch{
-    font-family: ReloadStencil-Regular, sans;
+.deutsch {
+    font-family: 'ReloadStencil-Regular', sans-serif;
     width: 900px !important;
     height: 70px;
     font-size: 40px;
     text-align: center;
-    line-height: 2;
     background-color: white;
-
-    /*border: 1px solid red;*/
-
-/*Aufforderung zum Scannen in Englisch*/
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
-.englisch{
-    font-family: 'Inter', sans;
+
+.englisch {
+    font-family: 'Inter', sans-serif;
     width: 683px;
     height: 61px;
     font-size: 31px;
-    line-height: 2;
     text-align: center;
     color: white;
     background-color: black;
     margin-top: -62px;
-    /*border: 1px solid blue;*/
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
-.deutsch-ausgabe{
-    font-family: ReloadStencil-Regular, sans;
+
+.deutsch-ausgabe {
+    font-family: 'ReloadStencil-Regular', sans-serif;
     width: 351px;
     height: 70px;
     font-size: 40px;
     text-align: center;
-    line-height: 2;
     background-color: white;
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
 
-.englisch-ausgabe{
-    font-family: 'Inter', sans;
+.englisch-ausgabe {
+    font-family: 'Inter', sans-serif;
     width: 192px;
     height: 61px;
     font-size: 31px;
-    line-height: 2;
     text-align: center;
     color: white;
     background-color: black;
     margin-top: -62px;
-    /*border: 1px solid blue;*/
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
+
 
 .ausgabeabfrage{
     font-family: Inter, sans;
@@ -108,13 +150,19 @@ h3{
     height: 100px;
     font-size: 24px;
     background-color: black;
-    /*text-align: center;*/
-    /*line-height: 4;*/
     color: white;
+    margin-top: 20px;
+
+    display: flex; /* Flexbox */
+    /*justify-content: center; !* Horizontal zentrieren *!*/
+    align-items: center; /* Vertikal zentrieren */
 }
 
-.index{
-    font-family: Inter, sans;
+
+
+
+.index {
+    font-family: Inter, sans-serif;
     width: 52px;
     height: 52px;
     font-size: 24px;
@@ -122,42 +170,28 @@ h3{
     background-color: white;
     float: left;
     text-align: center;
-    line-height: 2;
     border-radius: 50%;
     margin-left: 20px;
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
 }
 
-.days{
-    margin-left: 150px;
-    line-height: 4;
+
+.days {
+    margin-left: 100px;
+
 }
+
 
 .place {
-    text-align: end; /* Align text to the end of the container */
-    line-height: 1; /* Set a normal line height */
-    margin-right: 30px;
-    margin-top: -90px; /* Adjust the margin to align with other elements */
-}
-
-
-
-
-.kleinebox{
-    margin-left: 305px;
-    margin-top: 75px;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-}
-
-.alternativebox{
-    margin-left: 80px;
-    margin-top: 75px;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
+    position: absolute;
+    right: 25px;
 
 }
+
+
+
 
 /*Bilder*/
 img.benzel{
@@ -173,14 +207,41 @@ img.Vector{
     background-color: black;
     border: none;
     margin-right: 20px;
+
 }
 
-img.Karte{
+.Karte{
+    position: absolute;
+    right: -35%;
+    top: 0;
     width: 550px;
-    height: 903px;
-    margin-left: 971px;
-    margin-top: -799px;
+    height: 900px;
+    transition: right 3s 0.1s;
+}
+
+.Karte.in {
+    right: 0;
+}
+
+.box{
+    position: absolute;
+}
+
+.box.boxleft{
+    transform: translateX(calc((1600px - 110%) / 2 * -1));
+    transition: transform 3s 0.1s;
 }
 
 
 
+
+
+
+
+
+
+
+
+/*todo*/
+/*Wenn klasse box klasse in hat dann */
+/*transform: translateX(calc((1600px - 100%) / 2 * -1);*/
