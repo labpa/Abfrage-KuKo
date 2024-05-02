@@ -14,11 +14,15 @@ const App: FC = () => {
     const now: dayjs.Dayjs = dayjs();
     const exampleDate = dayjs('2023-06-25'); //todo: exampleDate muss durch now ersetzt werden
 
+    //todo: weiter mit fetchData siehe Auskommentierter code
+    const [noData, setNoData] = useState<boolean>();
+    console.log(noData);
+
+
 
     //Zeit nach der die Ausgabe beendet wird
-    const falsch = 1;
     const normal = 10000; // 10 seconds
-    const lang = 18000; // 15 seconds
+    const lang = 18000; // 18 seconds
 
 
     // Array mit Übersetzungen zu den Treffpunkten wird deklariert
@@ -49,6 +53,7 @@ const App: FC = () => {
         Sun: "So, Sun"
     }
 
+
     const fetchData = async () => {
         try {
             if (eingabe.trim() !== "") { // Überprüfung, ob Eingabe leer ist
@@ -57,12 +62,59 @@ const App: FC = () => {
                     throw new Error('Fehler');
                 }
                 const jsonData = await ausgabe.json();
+
+
+
+
+                //todo: Der Block hier ist nur zum testen
+
+                // console.log(jsonData.data);
+                // console.log(jsonData.data === null); //todo: Hier weiter!!!!!
+                if(jsonData.data === null){
+                    // console.log("Keine Daten");
+                    setNoData(false);
+                    console.log("Keine Daten:" + noData);
+                } else {
+                    // console.log("Hier sind die Daten:" + jsonData.data);
+                    setData(true);
+                    console.log("Hier gibt es Daten" + noData)
+                }
+
+
+
+
+
+
                 setData(jsonData);
             }
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
+
+
+
+
+    // const fetchData = async () => {
+    //     try {
+    //         if (eingabe.trim() !== "") { // Überprüfung, ob Eingabe leer ist
+    //             const ausgabe = await fetch(`https://supporter.kulturkosmos.de/api/self-service/shifts/${eingabe}`);
+    //             if (!ausgabe.ok) {
+    //                 throw new Error('Fehler');
+    //             }
+    //
+    //             const jsonData = await ausgabe.json();
+    //             if(jsonData.data !== null){
+    //                 setData(jsonData);
+    //                 // setNoData(false);
+    //             } else {
+    //                 // setNoData(true);
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //     }
+    // };
 
     const handleClick = () => {
         if(eingabe !== ""){
@@ -75,30 +127,22 @@ const App: FC = () => {
     };
 
     // Neu laden der Seite todo: Aktivieren wenn fertig :D ÄNDERN
-
     useEffect(() => {
-        if (!data) {
-            return;
-        }
-
-        if (data.data === null) {
-            console.log("Kein Ergebniss bei der Abfrage");
+        if (!data || data.data === null) {
+            // console.log("Kein Ergebnis bei der Abfrage");
             const timer = setTimeout(() => {
                 setAbfrage(false);
-                window.location.reload();  //todo: dass muss anders auch gehen!!!
-            }, falsch);
+            }, 1000); // Timeout von 1 Sekunde
             return () => clearTimeout(timer);
         }
 
-        const timeoutDuration = abfrage && !warnung ? normal : lang;
-
+        const timeoutDauer = abfrage && !warnung ? normal : lang;
         const timer = setTimeout(() => {
             setAbfrage(false);
-        }, timeoutDuration);
+        }, timeoutDauer);
 
         return () => clearTimeout(timer);
-    }, [abfrage, data, warnung]);
-
+    }, [abfrage, data, warnung, normal, lang]);
 
     return (
         <div>
@@ -137,8 +181,9 @@ const App: FC = () => {
                                         .map((entry: any, index: number) => (
                                             <div className={"ausgabeabfrage"} key={index}>
                                                 <p className={"index"}>{index + 1}</p>
-                                                <p className={"days"}>{days[dayjs(entry.startAt).format('ddd')]} // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
-                                                <p className={"place"}> <img src={Vector} alt="Vector" className="Vector" />{waitingSpot[entry.waitingSpot]}</p>
+                                                <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
+                                                <p className={"vector"}> <img src={Vector} alt="Vector" className="Vector" /></p>
+                                                <p className={"place"}>{waitingSpot[entry.waitingSpot]}</p>
                                                 <br />
                                             </div>
                                         ))
