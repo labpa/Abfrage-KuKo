@@ -1,9 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState} from 'react';
 import dayjs from "dayjs";
 import './css/App.css'
 import benzel from "../src/images/app/grafik 1.png"
 import Vector from '../src/images/app/Vector.png'
 import Karte from '../src/images/app/map.png'
+// import BarcodeReader from 'react-barcode-reader';
 
 const App: FC = () => {
     // Daten und Eingabe werden deklariert
