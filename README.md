@@ -51,6 +51,10 @@ window: "bitte erfragen"
 0433541A757780  
 04BB2B6ABE6F80  
 
+### Code auf Karten
+105D5A59  
+30105314
+
 
 ### Test Button
 Um unterschiedliche Fälle zu testen, wurden mehrere Buttons erstellt. Jeder Button wurde mit einer Beispiel-ID versehen. Über das Aufrufen der Buttons ist es möglich, Testabfragen zu machen.  
@@ -63,4 +67,6 @@ Am 30.06.2023 sind zwei Schichten eingetragen. Zuerst wird die frühe Schicht au
 
 ## Todo
 ### Einfangen der Tastatur eingabe -> NFC Reader
-https://github.com/kybarg/react-barcode-reader
+https://github.com/kybarg/react-barcode-reader  
+`yarn add react-barcode-reader`
+
