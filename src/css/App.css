@@ -151,6 +151,32 @@ h3 {
     align-items: center; /* Vertikal zentrieren */
 }
 
+.deutsch-ausgabe-no {
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    width: 500px;
+    height: 70px;
+    font-size: 40px;
+    text-align: center;
+    background-color: white;
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+}
+
+.englisch-ausgabe-no {
+    font-family: 'Inter', sans-serif;
+    width: 400px;
+    height: 61px;
+    font-size: 31px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-top: -62px;
+    display: flex; /* Flexbox */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+}
+
 
 .ausgabeabfrage{
     font-family: 'Inter', sans-serif;
@@ -216,6 +242,12 @@ img.Vector{
 
 }
 
+
+
+
+
+
+/*Grundposition Karte*/
 .Karte{
     position: absolute;
     right: -35%;
@@ -225,9 +257,60 @@ img.Vector{
     transition: right 3s 0.1s;
 }
 
+/*Position Karte bei Abfrage*/
 .Karte.in {
     right: 0;
 }
+
+/*Beschriftung Pfeil Position*/
+.Beschriftung{
+    position: absolute;
+    right: -23%;
+    top: 13em;
+    width: 107px;
+    height: 20px;
+    transition: right 3s 0.1s;
+
+}
+.Beschriftung.ko {
+    position: absolute;
+    right: 12em;
+    top: 12em;
+    width: 107px;
+    height: 20px;
+    animation: bounce2 2s ease infinite;
+}
+
+
+.Pfeil{
+    position: absolute;
+    right: -23%;
+    top: 13em;
+    width: 107px;
+    height: 100px;
+    transition: right 3s 0.1s;
+
+}
+.Pfeil.ok{
+    position: absolute;
+    right: 12em;
+    top: 13em;
+    width: 107px;
+    height: 100px;
+    animation: bounce2 2s ease infinite;
+}
+
+
+@keyframes bounce2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+
+
 
 .box{
     position: absolute;
