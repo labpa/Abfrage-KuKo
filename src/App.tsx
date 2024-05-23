@@ -57,6 +57,7 @@ const App: FC = () => {
         window: "bitte erfragen"
     };
 
+    //Übersetzung der Tage
     const days: Record<string, string> = {
         Mon: "Mo, Mon",
         Tue: "Di, Tue",
@@ -89,6 +90,8 @@ const App: FC = () => {
 
                 if (jsonData.data === null) {
                     setNoData(true);
+                    setData(false);
+                    setWarnung(false);
                 } else {
                     setData(jsonData);
                 }
