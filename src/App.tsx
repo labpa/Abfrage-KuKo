@@ -16,29 +16,17 @@ const App: FC = () => {
     const [warnungText, setWarnungText] = useState<string | null>(null);
     // const now: dayjs.Dayjs = dayjs(); todo: exampleDate = now
     const exampleDate = dayjs('2023.01.01');
-
     const [noData, setNoData] = useState<boolean>(false);
 
-console.log(warnungText);
 
-    const handleScan = async (data: string) => {
-        if (data !== "") {
-            setEingabe(data);
-            await fetchData(data); // Warte auf die Datenabfrage, bevor du fortfährst
-            setAbfrage(true);
-        } else {
-            alert("Leer nicht möglich");
-        }
-    };
+    //Zeitangabe Anzeige Abfrage
+    const normal = 10000; // 10 Sekunden -> Normale Abfrage
+    const lang = 18000; // 18 Sekunden -> Abfrage mit Warnung
+    const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
 
-    const handleError = (err: any) => {
-        console.error(err);
-    };
 
-    const normal = 10000; // 10 seconds
-    const lang = 15000; // 15 seconds
-    const short = 3000; // 3 seconds
-
+    // Lookup-Tabellen
+    // Treffpunkt
     const waitingSpot: Record<string, string> = {
         bike: "Fahrrad",
         bottle: "Flasche",
@@ -67,6 +55,26 @@ console.log(warnungText);
         Sun: "So, Sun"
     };
 
+
+    //NFC-Reader
+    //Eingabe des NFC-Scanners wird verarbeitet
+    const handleScan = async (data: string) => {
+        if (data !== "") {
+            setEingabe(data);
+            await fetchData(data); // Warte auf die Datenabfrage, bevor du fortfährst
+            setAbfrage(true);
+        } else {
+            alert("Leer nicht möglich");
+        }
+    };
+
+    //Im Falle eines Fehlers wird dieser ausgegeben
+    const handleError = (err: any) => {
+        console.error(err);
+    };
+
+
+    //API-Abfrage
     const fetchData = async (input: string) => {
         try {
             const trimmedInput = input.trim();
@@ -101,6 +109,7 @@ console.log(warnungText);
     };
 
 
+    //useEffect
     useEffect(() => {
         if (abfrage) {
             const timeoutDauer = warnung ? lang : normal;
@@ -119,7 +128,7 @@ console.log(warnungText);
                 setNoData(false);
                 setWarnung(false);
                 setAbfrage(false);
-            }, short); // 3 seconds
+            }, kurz); // 3 seconds
 
             return () => clearTimeout(timer);
         }
