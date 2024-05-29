@@ -111,28 +111,28 @@ const App: FC = () => {
 
     //useEffect
     useEffect(() => {
+
+        if (noData) {
+            const timer = setTimeout(() => {
+                setNoData(false);
+                setWarnung(false);
+                setAbfrage(false);
+            },kurz); // 3 seconds
+            return () => clearTimeout(timer);
+        }
+
         if (abfrage) {
             const timeoutDauer = warnung ? lang : normal;
             const timer = setTimeout(() => {
                 setAbfrage(false);
                 setWarnung(false);
             }, timeoutDauer);
-
             return () => clearTimeout(timer);
         }
-    }, [abfrage, warnung, normal, lang]);
 
-    useEffect(() => {
-        if (noData) {
-            const timer = setTimeout(() => {
-                setNoData(false);
-                setWarnung(false);
-                setAbfrage(false);
-            }, kurz); // 3 seconds
+    }, [abfrage, warnung, normal, lang, kurz,  noData]);
 
-            return () => clearTimeout(timer);
-        }
-    }, [noData]);
+
 
     return (
         <div>
@@ -170,8 +170,8 @@ const App: FC = () => {
                                                 <div className={"ausgabeabfrage"} key={index}>
                                                     <p className={"index"}>{index + 1}</p>
                                                     <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
-                                                    <p className={"vector"}> <img src={Vector} alt="Vector" className="Vector" /></p>
-                                                    <p className={"place"}>{waitingSpot[entry.waitingSpot]}</p>
+                                                    {/*<p className={"vector"}> <img src={Vector} alt="Vector" className="Vector" /></p>*/}
+                                                    <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
                                                     <br />
                                                 </div>
                                             ))

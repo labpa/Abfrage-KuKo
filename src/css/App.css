@@ -1,11 +1,3 @@
-/*!*todo*!*/
-/*!*Wenn klasse box klasse in hat dann *!*/
-/*!*transform: translateX(calc((1600px - 100%) / 2 * -1);*!*/
-
-
-
-
-
 /*ReloadStencil-Regular*/
 @font-face {
     font-family: 'ReloadStencil-Regular';
@@ -213,15 +205,15 @@ h3 {
 
 }
 
-.vector {
-    /*position: absolute;*/
-    right: 25px;
-    margin-left: 320px;
+.Vector {
+    position: absolute;
 }
+
 .place {
-    text-align: right !important;
-    width: 100px;
+    text-align: right;
+    display: inline;
     margin-right: 40px;
+    flex: 1;
 }
 
 
@@ -309,9 +301,6 @@ img.Vector{
 
 
 
-
-
-
 .box{
     position: absolute;
 }
@@ -320,8 +309,3 @@ img.Vector{
     transform: translateX(calc((1600px - 110%) / 2 * -1));
     transition: transform 3s 0.1s;
 }
-
-/*todo*/
-/*Wenn klasse box klasse in hat dann */
-/*transform: translateX(calc((1600px - 100%) / 2 * -1);*/
-
