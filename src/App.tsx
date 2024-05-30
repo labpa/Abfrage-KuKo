@@ -17,6 +17,7 @@ const App: FC = () => {
     // const now: dayjs.Dayjs = dayjs(); todo: exampleDate = now
     const exampleDate = dayjs('2023.01.01');
     const [noData, setNoData] = useState<boolean>(false);
+    const [zaehler, setZaehler] = useState<number>(0);
 
 
     //Zeitangabe Anzeige Abfrage
@@ -56,6 +57,11 @@ const App: FC = () => {
     };
 
 
+    const counter = () => {
+        setZaehler(prevCount => prevCount + 1); // Zustand aktualisieren
+    }
+
+
     //NFC-Reader
     //Eingabe des NFC-Scanners wird verarbeitet
     const handleScan = async (data: string) => {
@@ -63,6 +69,7 @@ const App: FC = () => {
             setEingabe(data);
             await fetchData(data); // Warte auf die Datenabfrage, bevor du fortfährst
             setAbfrage(true);
+
         } else {
             alert("Leer nicht möglich");
         }
@@ -111,7 +118,6 @@ const App: FC = () => {
 
     //useEffect
     useEffect(() => {
-
         if (noData) {
             const timer = setTimeout(() => {
                 setNoData(false);
@@ -126,6 +132,7 @@ const App: FC = () => {
             const timer = setTimeout(() => {
                 setAbfrage(false);
                 setWarnung(false);
+                counter();
             }, timeoutDauer);
             return () => clearTimeout(timer);
         }
@@ -193,7 +200,6 @@ const App: FC = () => {
                 <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' in' : ''}`} />
                 <img src={Pfeil} alt={"Pfeil"} className={`Pfeil ${abfrage ? 'ok' : ''}`}/>
                 <img src={Beschriftung} alt={"Beschriftung"} className={`Beschriftung ${abfrage ? 'ko' : ''}`}/>
-
             </div>
 
             <div className={"wip"}>
@@ -202,6 +208,8 @@ const App: FC = () => {
                     onScan={handleScan}
                 />
             </div>
+
+            {zaehler}
         </div>
     );
 };
