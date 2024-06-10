@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.57a98726.css",
+    "main.js": "/static/js/main.3c78d795.js",
+    "static/js/453.c0829641.chunk.js": "/static/js/453.c0829641.chunk.js",
+    "static/media/supporter-sheme-3 1.png": "/static/media/supporter-sheme-3 1.bfb8588434c1f1ef6d41.png",
+    "static/media/map.png": "/static/media/map.c72504c8476d4ada5554.png",
+    "static/media/grafik 1.png": "/static/media/grafik 1.29676a5cf0a092b3b79b.png",
+    "static/media/reload-stencil-regular.woff": "/static/media/reload-stencil-regular.049af2c19e5ef5925cea.woff",
+    "static/media/reload-stencil-regular.woff2": "/static/media/reload-stencil-regular.a5e249ad498831a97769.woff2",
+    "static/media/inter-v12-latin-regular.woff2": "/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
+    "index.html": "/index.html",
+    "main.57a98726.css.map": "/static/css/main.57a98726.css.map",
+    "main.3c78d795.js.map": "/static/js/main.3c78d795.js.map",
+    "453.c0829641.chunk.js.map": "/static/js/453.c0829641.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57a98726.css",
+    "static/js/main.3c78d795.js"
+  ]
+}
