@@ -322,3 +322,13 @@ img.Vector{
     transform: translateX(calc((1440px - 110%) / 2 * -1));
     transition: transform 3s 0.1s;
 }
+
+.wetter{
+    width: 440px;  /* Width of the rectangle */
+    height: 340px; /* Height of the rectangle */
+    background-color: white; /* Background color of the rectangle */
+    border: 2px solid black; /* Border around the rectangle */
+    position: absolute;    /* Position the rectangle relative to the viewport */
+    bottom: -50px; /* Position the rectangle outside at the bottom */
+    right: -110px; /* Position the rectangle outside at the right */
+}
