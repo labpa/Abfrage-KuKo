@@ -1,3 +1,16 @@
+/* reset.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
 /*ReloadStencil-Regular*/
 @font-face {
     font-family: 'ReloadStencil-Regular';
@@ -18,7 +31,8 @@
 
 /*Grundfläche*/
 .grundflaeche {
-    width: 1600px;
+    /*width: 1600px;*/
+    width: 1440px;
     height: 900px;
     background-image: url('../images/app/supporter-sheme-3 1.png');
     display: flex;
@@ -26,11 +40,12 @@
     align-items: center;
     position: relative;
     overflow: visible;
+    z-index: 0;
 }
 
 /*Warnung Grundfläche*/
 .warnung {
-    width: 940px;
+    width: 1150px;
     height: 75px;
     background-color: red;
 }
@@ -40,7 +55,7 @@
     font-size: 54px;
     color: white;
     white-space: nowrap;
-    animation: scroll 9s linear infinite;
+    animation: scroll 11s linear infinite;
 }
 
 .scroll-container {
@@ -57,16 +72,11 @@
     }
 }
 
-/*Alle Animationen*/
-h2, h3, .deutsch, .englisch, .deutsch-ausgabe, .englisch-ausgabe, .ausgabeabfrage, .index, .days, .vector, .place, img.benzel, img.Vector, .Karte {
-    animation-duration: 9s; /* Setze die Dauer aller Animationen auf 9 Sekunden */
-}
-
 h2 {
     font-family: 'ReloadStencil-Regular', sans-serif;
-    width: 940px;
+    width: 1150px;
     height: 102px;
-    font-size: 64px;
+    font-size: 62px;
     color: black;
     text-align: center;
     background-color: white;
@@ -74,28 +84,33 @@ h2 {
     display: flex; /* Flexbox */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
+    z-index: 9999; /* Sehr hoher z-index-Wert */
 }
+
+
+
 
 
 h3 {
     font-family: 'Inter', sans-serif;
-    width: 710px;
+    width: 900px;
     height: 75px;
-    font-size: 54px;
+    font-size: 53px;
     color: white;
     text-align: center;
     background-color: black;
-    margin-top: -70px;
+    margin-top: -70px ;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .deutsch {
     font-family: 'ReloadStencil-Regular', sans-serif;
     width: 900px;
     height: 70px;
-    font-size: 40px;
+    font-size: 38px;
     text-align: center;
     background-color: white;
     display: flex; /* Flexbox */
@@ -107,7 +122,7 @@ h3 {
     font-family: 'Inter', sans-serif;
     width: 683px;
     height: 61px;
-    font-size: 31px;
+    font-size: 29px;
     text-align: center;
     color: white;
     background-color: black;
@@ -172,7 +187,7 @@ h3 {
 
 .ausgabeabfrage{
     font-family: 'Inter', sans-serif;
-    width: 941px;
+    width: 700px;
     height: 100px;
     font-size: 24px;
     background-color: black;
@@ -235,39 +250,37 @@ img.Vector{
 }
 
 
-
-
-
-
 /*Grundposition Karte*/
 .Karte{
     position: absolute;
-    right: -35%;
+    right: -50%;
     top: 0;
-    width: 550px;
+    width: 650px;
     height: 900px;
-    transition: right 3s 0.1s;
+    transition: right 2s 0.1s;
+
 }
 
 /*Position Karte bei Abfrage*/
 .Karte.in {
     right: 0;
+    z-index: -1;
 }
 
 /*Beschriftung Pfeil Position*/
 .Beschriftung{
     position: absolute;
-    right: -23%;
-    top: 13em;
+    right: -45%;
+    top: 15em;
     width: 107px;
     height: 20px;
-    transition: right 3s 0.1s;
+    transition: right 2s 0.1s;
 
 }
 .Beschriftung.ko {
     position: absolute;
-    right: 12em;
-    top: 12em;
+    right: 4em;
+    top: 15em;
     width: 107px;
     height: 20px;
     animation: bounce2 2s ease infinite;
@@ -276,17 +289,16 @@ img.Vector{
 
 .Pfeil{
     position: absolute;
-    right: -23%;
-    top: 13em;
+    right: -45%;
+    top: 9em;
     width: 107px;
     height: 100px;
-    transition: right 3s 0.1s;
-
+    transition: right 2s 0.1s;
 }
 .Pfeil.ok{
     position: absolute;
-    right: 12em;
-    top: 13em;
+    right: 4em;
+    top: 9em;
     width: 107px;
     height: 100px;
     animation: bounce2 2s ease infinite;
@@ -306,6 +318,7 @@ img.Vector{
 }
 
 .box.boxleft{
-    transform: translateX(calc((1600px - 110%) / 2 * -1));
+    /*transform: translateX(calc((1600px - 110%) / 2 * -1));*/
+    transform: translateX(calc((1440px - 110%) / 2 * -1));
     transition: transform 3s 0.1s;
 }

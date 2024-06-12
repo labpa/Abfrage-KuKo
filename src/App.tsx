@@ -672,7 +672,7 @@ import dayjs from "dayjs";
 import './css/App.css';
 import benzel from '../src/images/app/grafik 1.png';
 import Vector from '../src/images/app/Vector.png';
-import Karte from '../src/images/app/map.png';
+import Karte from '../src/images/app/SupporterMap2024.png';
 import Pfeil from '../src/images/app/pfeil.png';
 import Beschriftung from '../src/images/app/beschriftung.png';
 import BarcodeReader from 'react-barcode-reader';
@@ -685,7 +685,7 @@ const App: FC = () => {
     const [warnungText, setWarnungText] = useState<string | null>(null);
     const exampleDate = dayjs('2023.01.01');
     const [noData, setNoData] = useState<boolean>(false);
-    const [zaehler, setZaehler] = useState<number>(0);
+    // const [zaehler, setZaehler] = useState<number>(0);
     const [lastScannedId, setLastScannedId] = useState<string>("");
     const [scanTimeout, setScanTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -811,8 +811,8 @@ const App: FC = () => {
                 <div className={!abfrage ? "box" : "box boxleft"}>
                     {!abfrage ? (
                         <>
-                            <h2>Supporter Schichtauskunft</h2>
-                            <h3>Supporter Shiftinformation</h3>
+                            <h2>Supporter:innen Schichtauskunft</h2>
+                            <h3>Supporter:innen Shiftinformation</h3>
                             <h4 className={"deutsch"}>Bitte halte dein Bändsel unter den Scanner</h4>
                             <h5 className={"englisch"}>Please hold your wristband under the scanner</h5>
                             <img src={benzel} alt="benzel" className="benzel" />
@@ -826,8 +826,8 @@ const App: FC = () => {
                                     </div>
                                 </div>
                             )}
-                            <h2>Supporter Schichtauskunft</h2>
-                            <h3>Supporter Shiftinformation</h3>
+                            <h2>Supporter:innen Schichtauskunft</h2>
+                            <h3>Supporter:innen Shiftinformation</h3>
                             {data ? (
                                 <>
                                     <h4 className={"deutsch-ausgabe"}>Deine Schichten</h4>
