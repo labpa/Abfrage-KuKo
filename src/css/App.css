@@ -45,9 +45,9 @@ html, body {
 
 /*Warnung Grundfläche*/
 .warnung {
-    width: 1150px;
+    width: 750px;
     height: 75px;
-    background-color: red;
+    background-color: rgba(228, 31, 214, 0.8); /* Background color with transparency */
 }
 /*Text der Warnung*/
 .warnung-text{
@@ -55,11 +55,11 @@ html, body {
     font-size: 54px;
     color: white;
     white-space: nowrap;
-    animation: scroll 11s linear infinite;
+    animation: scroll 12s linear infinite;
 }
 
 .scroll-container {
-    width: 100%;
+    width: 60%;
     overflow: hidden;
 }
 
@@ -68,7 +68,7 @@ html, body {
         transform: translateX(100%); /* Startpunkt der Animation */
     }
     to {
-        transform: translateX(-100%); /* Endpunkt der Animation */
+        transform: translateX(-200%); /* Endpunkt der Animation */
     }
 }
 
@@ -88,12 +88,9 @@ h2 {
 }
 
 
-
-
-
 h3 {
     font-family: 'Inter', sans-serif;
-    width: 900px;
+    width: 750px;
     height: 75px;
     font-size: 53px;
     color: white;
@@ -187,7 +184,7 @@ h3 {
 
 .ausgabeabfrage{
     font-family: 'Inter', sans-serif;
-    width: 700px;
+    width: 1250px;
     height: 100px;
     font-size: 24px;
     background-color: black;
@@ -216,8 +213,7 @@ h3 {
 }
 
 .days {
-    margin-left: 100px;
-
+    margin-left: 40px;
 }
 
 .Vector {
@@ -226,9 +222,15 @@ h3 {
 
 .place {
     text-align: right;
+    margin-right: 60px;
     display: inline;
-    margin-right: 40px;
     flex: 1;
+}
+
+.needs{
+    width: 600px;
+    margin-right: 20px;
+    text-align: left;
 }
 
 
@@ -337,6 +339,29 @@ img.Vector{
     border: 5px solid white;
 }
 
+.option-karte{
+    width: 350px;  /* Width of the rectangle */
+    height: 325px; /* Height of the rectangle */
+    background-color: black;
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+}
+.frage{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
 .wetter-info{
     color: white;
     font-family: 'ReloadStencil-Regular', sans-serif;
@@ -362,3 +387,6 @@ img.Vector{
     margin-bottom: 0;
     margin-top: 0;
 }
+
+
+

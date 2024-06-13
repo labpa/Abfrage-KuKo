@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import './css/App.css';
 import benzel from '../src/images/app/grafik 1.png';
 import Vector from '../src/images/app/Vector.png';
-import Karte from '../src/images/app/SupporterMap2024.png';
+import Karte from '../src/images/app/map.png';
 import Pfeil from '../src/images/app/pfeil.png';
 import Beschriftung from '../src/images/app/beschriftung.png';
 import BarcodeReader from 'react-barcode-reader';
@@ -23,8 +23,8 @@ const App: FC = () => {
     const [scanTimeout, setScanTimeout] = useState<NodeJS.Timeout | null>(null);
 
     // Zeitangabe Anzeige Abfrage
-    const normal = 10000; // 10 Sekunden -> Normale Abfrage
-    const lang = 18000; // 18 Sekunden -> Abfrage mit Warnung
+    const normal = 15000; // 15 Sekunden -> Normale Abfrage
+    const lang = 20000; // 20 Sekunden -> Abfrage mit Warnung
     const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
     const resetTime = 15000; // 15 Sekunden -> Zeit nach der eine ID wieder gescannt werden kann
 
@@ -159,29 +159,26 @@ const App: FC = () => {
         }
     };
 
-
-
-
-    useEffect(() => {
-        if (noData) {
-            const timer = setTimeout(() => {
-                setNoData(false);
-                setWarnung(false);
-                setAbfrage(false);
-            }, kurz); // 3 seconds
-            return () => clearTimeout(timer);
-        }
-
-        if (abfrage) {
-            const timeoutDauer = warnung ? lang : normal;
-            const timer = setTimeout(() => {
-                setAbfrage(false);
-                setWarnung(false);
-            }, timeoutDauer);
-            return () => clearTimeout(timer);
-        }
-
-    }, [abfrage, warnung, normal, lang, kurz, noData]);
+    // useEffect(() => {
+    //     if (noData) {
+    //         const timer = setTimeout(() => {
+    //             setNoData(false);
+    //             setWarnung(false);
+    //             setAbfrage(false);
+    //         }, kurz); // 3 seconds
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    //     if (abfrage) {
+    //         const timeoutDauer = warnung ? lang : normal;
+    //         const timer = setTimeout(() => {
+    //             setAbfrage(false);
+    //             setWarnung(false);
+    //         }, timeoutDauer);
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    // }, [abfrage, warnung, normal, lang, kurz, noData]);
 
     return (
         <div>
@@ -190,7 +187,7 @@ const App: FC = () => {
                     {!abfrage ? (
                         <>
                             <h2>Supporter:innen Schichtauskunft</h2>
-                            <h3>Supporter:innen Shiftinformation</h3>
+                            <h3>Supporter Shiftinformation</h3>
                             <h4 className={"deutsch"}>Bitte halte dein Bändsel unter den Scanner</h4>
                             <h5 className={"englisch"}>Please hold your wristband under the scanner</h5>
                             <img src={benzel} alt="benzel" className="benzel" />
@@ -210,6 +207,7 @@ const App: FC = () => {
                                     </div>
                                 ) : null}
                             </div>
+                            <div className={"option-karte"}><p className={"frage"}>Karte?</p></div>
                         </>
                     ) : (
                         <>
@@ -221,7 +219,7 @@ const App: FC = () => {
                                 </div>
                             )}
                             <h2>Supporter:innen Schichtauskunft</h2>
-                            <h3>Supporter:innen Shiftinformation</h3>
+                            <h3>Supporter Shiftinformation</h3>
                             {data ? (
                                 <>
                                     <h4 className={"deutsch-ausgabe"}>Deine Schichten</h4>
@@ -236,6 +234,7 @@ const App: FC = () => {
                                                     <p className={"index"}>{index + 1}</p>
                                                     <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
                                                     <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
+                                                    <p className={"needs"}>Das hier sollten maximal 50 Zeichen sein 123456789</p>
                                                     <br />
                                                 </div>
                                             ))
