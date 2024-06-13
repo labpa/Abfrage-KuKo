@@ -238,7 +238,7 @@ img.benzel{
     height: 340px;
     border: 17px solid white;
     margin-top: -30px;
-    margin-left: 255px;
+    margin-left: 400px;
 }
 img.Vector{
     width: 19px;
@@ -323,12 +323,42 @@ img.Vector{
     transition: transform 3s 0.1s;
 }
 
-.wetter{
-    width: 440px;  /* Width of the rectangle */
-    height: 340px; /* Height of the rectangle */
-    background-color: white; /* Background color of the rectangle */
-    border: 2px solid black; /* Border around the rectangle */
+
+/*Ab Hier alles CSS was mit dem Wetter zu tun hat.*/
+.wetter {
+    width: 350px;  /* Width of the rectangle */
+    height: 325px; /* Height of the rectangle */
+    background-color: rgba(228, 31, 214, 0.5); /* Background color with transparency */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     position: absolute;    /* Position the rectangle relative to the viewport */
     bottom: -50px; /* Position the rectangle outside at the bottom */
     right: -110px; /* Position the rectangle outside at the right */
+    border-radius: 15%;
+    border: 5px solid white;
+}
+
+.wetter-info{
+    color: white;
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    /*font-family: 'Inter', sans-serif;*/
+    text-align: center;
+    font-size: 25px;
+}
+
+.logo{
+    width: 120px ;
+    margin-left: 200px;
+    margin-top: -100px;
+}
+
+.location{
+    font-weight: bold;
+    font-size: 40px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.weather-description{
+    margin-bottom: 0;
+    margin-top: 0;
 }

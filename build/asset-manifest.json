@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2534b447.css",
-    "main.js": "/static/js/main.bf8c41c0.js",
+    "main.css": "/static/css/main.35216a78.css",
+    "main.js": "/static/js/main.d2426a29.js",
     "static/js/453.da752d82.chunk.js": "/static/js/453.da752d82.chunk.js",
     "static/media/supporter-sheme-3 1.png": "/static/media/supporter-sheme-3 1.bfb8588434c1f1ef6d41.png",
     "static/media/SupporterMap2024.png": "/static/media/SupporterMap2024.e37ae9bb7940ba617915.png",
@@ -10,12 +10,12 @@
     "static/media/reload-stencil-regular.woff2": "/static/media/reload-stencil-regular.a5e249ad498831a97769.woff2",
     "static/media/inter-v12-latin-regular.woff2": "/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
     "index.html": "/index.html",
-    "main.2534b447.css.map": "/static/css/main.2534b447.css.map",
-    "main.bf8c41c0.js.map": "/static/js/main.bf8c41c0.js.map",
+    "main.35216a78.css.map": "/static/css/main.35216a78.css.map",
+    "main.d2426a29.js.map": "/static/js/main.d2426a29.js.map",
     "453.da752d82.chunk.js.map": "/static/js/453.da752d82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2534b447.css",
-    "static/js/main.bf8c41c0.js"
+    "static/css/main.35216a78.css",
+    "static/js/main.d2426a29.js"
   ]
 }

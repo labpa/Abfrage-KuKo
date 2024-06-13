@@ -28,28 +28,50 @@ const App: FC = () => {
     const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
     const resetTime = 15000; // 15 Sekunden -> Zeit nach der eine ID wieder gescannt werden kann
 
+    //Wetter Daten werden Geladen
+    const fetchWeatherData = async () => {
+        const apiKey = '4d1adda53bf636a53408d0cd1c5ba7b4';
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+        const city = 'Lärz';
+        const units = 'metric';
 
-    const abfrageWetter = async () => {
+        const url = `${apiUrl}?q=${encodeURIComponent(city)}&units=${units}&appid=${apiKey}`;
+
         try {
-            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=l%C3%A4rz&appid=4d1adda53bf636a53408d0cd1c5ba7b4');
-
+            const response = await fetch(url);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error('Failed to fetch weather data');
             }
-
-            const weatherData = await response.json();
-            setDataWeather(weatherData);
+            const abfrageWetter = await response.json();
+            setDataWeather(abfrageWetter);
+            // console.log('Weather data:', abfrageWetter);
+            return abfrageWetter;
         } catch (error) {
             console.error('Error fetching weather data:', error);
+            throw error;
         }
     };
 
+// Funktion, die alle 20 Minuten die Daten aktualisiert
+    const fetchWeatherPeriodically = () => {
+        const interval = setInterval(async () => {
+            try {
+                await fetchWeatherData();
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }, 20 * 60 * 1000); // 20 Minuten in Millisekunden umgerechnet
 
-console.log(dataWeather);
+        // Initialen Aufruf außerhalb des Intervals
+        fetchWeatherData();
 
+        // Rückgabe einer Funktion zum Beenden des Intervals, falls nötig
+        return () => clearInterval(interval);
+    };
 
-
-
+    useEffect(() => {
+        fetchWeatherPeriodically();
+    }, []);
 
 
     // Lookup-Tabellen
@@ -80,9 +102,6 @@ console.log(dataWeather);
         Sun: "So, Sun"
     };
 
-    // const counter = () => {
-    //     setZaehler(prevCount => prevCount + 1); // Zustand aktualisieren
-    // };
 
     const resetLastScannedId = () => {
         setLastScannedId("");
@@ -158,7 +177,6 @@ console.log(dataWeather);
             const timer = setTimeout(() => {
                 setAbfrage(false);
                 setWarnung(false);
-                // counter();
             }, timeoutDauer);
             return () => clearTimeout(timer);
         }
@@ -178,12 +196,17 @@ console.log(dataWeather);
                             <img src={benzel} alt="benzel" className="benzel" />
                             <div className={"wetter"}>
                                 {dataWeather && dataWeather.weather && dataWeather.weather.length > 0 ? (
-                                    <div className={"weather-info"}>
+                                    <div className={"wetter-info"}>
                                         <p className={"location"}>{dataWeather.name}</p>
-                                        <p className={"temperature"}>{Math.round(dataWeather.main.temp)}°C</p>
+                                        <img
+                                            className={"logo"}
+                                            src={`https://openweathermap.org/img/wn/${dataWeather.weather[0].icon}@2x.png`}
+                                            alt={""}
+                                        />
                                         <p className={"weather-description"}>{dataWeather.weather[0].description}</p>
+                                        <p className={"temperature"}>Temperature: {Math.round(dataWeather.main.temp)} °C</p>
+                                        <p className={"feels-like"}>Feels like: {Math.round(dataWeather.main.feels_like)} °C</p>
                                         <p className={"wind-speed"}>Wind: {dataWeather.wind.speed} m/s</p>
-                                        <p className={"visibility"}>Visibility: {dataWeather.visibility} m</p>
                                     </div>
                                 ) : null}
                             </div>
@@ -235,7 +258,7 @@ console.log(dataWeather);
                 <img src={Pfeil} alt={"Pfeil"} className={`Pfeil ${abfrage ? 'ok' : ''}`}/>
                 <img src={Beschriftung} alt={"Beschriftung"} className={`Beschriftung ${abfrage ? 'ko' : ''}`}/>
             </div>
-            <button onClick={abfrageWetter}>Wetter</button>
+            {/*<button onClick={abfrageWetter}>Wetter</button>*/}
 
             <div className={"wip"}>
                 <BarcodeReader
