@@ -4,6 +4,7 @@ import './css/App.css';
 import benzel from '../src/images/app/grafik 1.png';
 import Vector from '../src/images/app/Vector.png';
 import Karte from '../src/images/app/map.png';
+import KarteStartpage from '../src/images/app/map-startpage.png'
 import Pfeil from '../src/images/app/pfeil.png';
 import Beschriftung from '../src/images/app/beschriftung.png';
 import BarcodeReader from 'react-barcode-reader';
@@ -159,26 +160,26 @@ const App: FC = () => {
         }
     };
 
-    // useEffect(() => {
-    //     if (noData) {
-    //         const timer = setTimeout(() => {
-    //             setNoData(false);
-    //             setWarnung(false);
-    //             setAbfrage(false);
-    //         }, kurz); // 3 seconds
-    //         return () => clearTimeout(timer);
-    //     }
-    //
-    //     if (abfrage) {
-    //         const timeoutDauer = warnung ? lang : normal;
-    //         const timer = setTimeout(() => {
-    //             setAbfrage(false);
-    //             setWarnung(false);
-    //         }, timeoutDauer);
-    //         return () => clearTimeout(timer);
-    //     }
-    //
-    // }, [abfrage, warnung, normal, lang, kurz, noData]);
+    useEffect(() => {
+        if (noData) {
+            const timer = setTimeout(() => {
+                setNoData(false);
+                setWarnung(false);
+                setAbfrage(false);
+            }, kurz); // 3 seconds
+            return () => clearTimeout(timer);
+        }
+
+        if (abfrage) {
+            const timeoutDauer = warnung ? lang : normal;
+            const timer = setTimeout(() => {
+                setAbfrage(false);
+                setWarnung(false);
+            }, timeoutDauer);
+            return () => clearTimeout(timer);
+        }
+
+    }, [abfrage, warnung, normal, lang, kurz, noData]);
 
     return (
         <div>
@@ -207,7 +208,8 @@ const App: FC = () => {
                                     </div>
                                 ) : null}
                             </div>
-                            <div className={"option-karte"}><p className={"frage"}>Karte?</p></div>
+                            {/*<img src={KarteStartpage} alt={"KarteStartpage"} className={"option-karte"}/>*/}
+                            {/*<div className={"option-karte"}><p className={"frage"}>Karte?</p></div>*/}
                         </>
                     ) : (
                         <>
@@ -243,11 +245,12 @@ const App: FC = () => {
                                     )}
                                 </>
                             ) : (
-                                noData && (
-                                    <>
+                                noData  && (
+                                    <div className={"noDataLeft"}>
                                         <h4 className={"deutsch-ausgabe-no"}>Keine Informationen</h4>
                                         <h5 className={"englisch-ausgabe-no"}>No Information</h5>
-                                    </>
+                                    </div>
+
                                 )
                             )}
                         </>

@@ -70,3 +70,14 @@ Am 30.06.2023 sind zwei Schichten eingetragen. Zuerst wird die frühe Schicht au
 https://github.com/kybarg/react-barcode-reader  
 `yarn add react-barcode-reader`
 
+
+
+# Todo
+## Karte
++ hinzufügen der neuen Supporter:innen Karte 2024
+
+## Supporter:innen
++ Aus Supporter soll Supporter:innen werden
+
+## Wetter
++ Anzeige Linksunten Wetterbericht

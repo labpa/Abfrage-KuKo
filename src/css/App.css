@@ -48,6 +48,7 @@ html, body {
     width: 750px;
     height: 75px;
     background-color: rgba(228, 31, 214, 0.8); /* Background color with transparency */
+    /*margin-top: 100px;*/
 }
 /*Text der Warnung*/
 .warnung-text{
@@ -85,6 +86,7 @@ h2 {
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
     z-index: 9999; /* Sehr hoher z-index-Wert */
+    margin-top: 20px;
 }
 
 
@@ -155,6 +157,8 @@ h3 {
     align-items: center; /* Vertikal zentrieren */
 }
 
+
+/*Anzeige, wenn keine Daten Vorhanden sind -> Falsches Bändchen oder oder oder*/
 .deutsch-ausgabe-no {
     font-family: 'ReloadStencil-Regular', sans-serif;
     width: 500px;
@@ -165,6 +169,7 @@ h3 {
     display: flex; /* Flexbox */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
+    margin-left: 200px;
 }
 
 .englisch-ausgabe-no {
@@ -179,8 +184,15 @@ h3 {
     display: flex; /* Flexbox */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
+    margin-left: 200px;
 }
 
+.noDataLeft{
+    transform: translateX(calc((1440px - 110%) / 2 * -1));
+    transition: transform 3s 0.1s;
+    margin-bottom: 320px;
+}
+/*######################################*/
 
 .ausgabeabfrage{
     font-family: 'Inter', sans-serif;
@@ -239,18 +251,18 @@ img.benzel{
     width: 340px;
     height: 340px;
     border: 17px solid white;
+    /*border-radius: 15%;*/
     margin-top: -30px;
     margin-left: 400px;
 }
+
 img.Vector{
     width: 19px;
     height: 30px;
     background-color: black;
     border: none;
     /*margin-right: 0px;*/
-
 }
-
 
 /*Grundposition Karte*/
 .Karte{
@@ -323,13 +335,16 @@ img.Vector{
     /*transform: translateX(calc((1600px - 110%) / 2 * -1));*/
     transform: translateX(calc((1440px - 110%) / 2 * -1));
     transition: transform 3s 0.1s;
+    margin-bottom: 40px;
 }
+
+
 
 
 /*Ab Hier alles CSS was mit dem Wetter zu tun hat.*/
 .wetter {
     width: 350px;  /* Width of the rectangle */
-    height: 325px; /* Height of the rectangle */
+    height: 300px; /* Height of the rectangle */
     background-color: rgba(228, 31, 214, 0.5); /* Background color with transparency */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     position: absolute;    /* Position the rectangle relative to the viewport */
@@ -342,22 +357,19 @@ img.Vector{
 .option-karte{
     width: 350px;  /* Width of the rectangle */
     height: 325px; /* Height of the rectangle */
-    background-color: black;
     position: absolute;
     bottom: -50px;
     left: -100px;
+    border-radius: 15%;
+    border: 5px solid white;
+    /*opacity: 0.9;*/
 }
+
 .frage{
     font-size: 40px;
     color: white;
     text-align: center;
 }
-
-
-
-
-
-
 
 
 
@@ -377,15 +389,27 @@ img.Vector{
 }
 
 .location{
-    font-weight: bold;
     font-size: 40px;
     width: 200px;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .weather-description{
     margin-bottom: 0;
     margin-top: 0;
+}
+.wind-speed{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.feels-like{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.temperature{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
