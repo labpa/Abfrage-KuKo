@@ -3,8 +3,10 @@ import dayjs from "dayjs";
 import './css/App.css';
 import benzel from '../src/images/app/grafik 1.png';
 import Vector from '../src/images/app/Vector.png';
-import Karte from '../src/images/app/map.png';
-import KarteStartpage from '../src/images/app/map-startpage.png'
+// import Karte from '../src/images/app/map.png';
+// import KarteNeu from '../src/images/app/map-startpage.png';
+// import Karte from '../src/images/app/sup_karte.png';
+import Karte from '../src/images/app/zuschnitt-karte.png'
 import Pfeil from '../src/images/app/pfeil.png';
 import Beschriftung from '../src/images/app/beschriftung.png';
 import BarcodeReader from 'react-barcode-reader';
@@ -160,26 +162,26 @@ const App: FC = () => {
         }
     };
 
-    useEffect(() => {
-        if (noData) {
-            const timer = setTimeout(() => {
-                setNoData(false);
-                setWarnung(false);
-                setAbfrage(false);
-            }, kurz); // 3 seconds
-            return () => clearTimeout(timer);
-        }
-
-        if (abfrage) {
-            const timeoutDauer = warnung ? lang : normal;
-            const timer = setTimeout(() => {
-                setAbfrage(false);
-                setWarnung(false);
-            }, timeoutDauer);
-            return () => clearTimeout(timer);
-        }
-
-    }, [abfrage, warnung, normal, lang, kurz, noData]);
+    // useEffect(() => {
+    //     if (noData) {
+    //         const timer = setTimeout(() => {
+    //             setNoData(false);
+    //             setWarnung(false);
+    //             setAbfrage(false);
+    //         }, kurz); // 3 seconds
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    //     if (abfrage) {
+    //         const timeoutDauer = warnung ? lang : normal;
+    //         const timer = setTimeout(() => {
+    //             setAbfrage(false);
+    //             setWarnung(false);
+    //         }, timeoutDauer);
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    // }, [abfrage, warnung, normal, lang, kurz, noData]);
 
     return (
         <div>
@@ -220,8 +222,8 @@ const App: FC = () => {
                                     </div>
                                 </div>
                             )}
-                            <h2>Supporter:innen Schichtauskunft</h2>
-                            <h3>Supporter Shiftinformation</h3>
+                            {/*<h2>Supporter:innen Schichtauskunft</h2>*/}
+                            {/*<h3>Supporter Shiftinformation</h3>*/}
                             {data ? (
                                 <>
                                     <h4 className={"deutsch-ausgabe"}>Deine Schichten</h4>
@@ -233,12 +235,15 @@ const App: FC = () => {
                                             .slice(0, 3)
                                             .map((entry: any, index: number) => (
                                                 <div className={"ausgabeabfrage"} key={index}>
-                                                    <p className={"index"}>{index + 1}</p>
-                                                    <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
-                                                    <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
+                                                    <div className="main-content">
+                                                        <p className={"index"}>{index + 1}</p>
+                                                        <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
+                                                        <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
+                                                    </div>
                                                     <p className={"needs"}>Das hier sollten maximal 50 Zeichen sein 123456789</p>
                                                     <br />
                                                 </div>
+
                                             ))
                                     ) : (
                                         <p></p>

@@ -194,19 +194,51 @@ h3 {
 }
 /*######################################*/
 
-.ausgabeabfrage{
+/*.ausgabeabfrage{*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    width: 650px;*/
+/*    height: 175px;*/
+/*    font-size: 24px;*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    margin-top: 20px;*/
+
+/*    display: flex; !* Flexbox *!*/
+/*    !*justify-content: center; !* Horizontal zentrieren *!*!*/
+/*    align-items: center; !* Vertikal zentrieren *!*/
+/*}*/
+
+.ausgabeabfrage {
     font-family: 'Inter', sans-serif;
-    width: 1250px;
-    height: 100px;
+    width: 650px;
+    height: 150px;
     font-size: 24px;
     background-color: black;
     color: white;
     margin-top: 20px;
 
-    display: flex; /* Flexbox */
-    /*justify-content: center; !* Horizontal zentrieren *!*/
-    align-items: center; /* Vertikal zentrieren */
+    display: flex;
+    flex-direction: column; /* Ändere die Ausrichtung auf vertikal */
+    align-items: center;
+    justify-content: space-between; /* Verteile den Platz zwischen den Elementen */
 }
+
+.main-content {
+    display: flex;
+    flex-direction: row; /* Behalte die horizontale Ausrichtung für den Hauptinhalt */
+    align-items: center;
+}
+
+.needs{
+    display: flex;
+    flex-direction: row; /* Behalte die horizontale Ausrichtung für den Hauptinhalt */
+    align-items: center;
+}
+
+
+
+
+
 
 .index {
     font-family: Inter, sans-serif;
@@ -239,11 +271,6 @@ h3 {
     flex: 1;
 }
 
-.needs{
-    width: 600px;
-    margin-right: 20px;
-    text-align: left;
-}
 
 
 /*Bilder*/
@@ -335,10 +362,9 @@ img.Vector{
     /*transform: translateX(calc((1600px - 110%) / 2 * -1));*/
     transform: translateX(calc((1440px - 110%) / 2 * -1));
     transition: transform 3s 0.1s;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    /*margin-top: 20px;*/
 }
-
-
 
 
 /*Ab Hier alles CSS was mit dem Wetter zu tun hat.*/
