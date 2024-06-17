@@ -261,9 +261,11 @@ const App: FC = () => {
                         </>
                     )}
                 </div>
+                <div className={`dreieck${abfrage ? ' ok' : ''}`}></div>
+                <div className={`supportercare${abfrage ? ' ko' : ''}`}>Supporter Care</div>
                 <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' in' : ''}`} />
-                <img src={Pfeil} alt={"Pfeil"} className={`Pfeil ${abfrage ? 'ok' : ''}`}/>
-                <img src={Beschriftung} alt={"Beschriftung"} className={`Beschriftung ${abfrage ? 'ko' : ''}`}/>
+                {/*<img src={Pfeil} alt={"Pfeil"} className={`Pfeil ${abfrage ? 'ok' : ''}`}/>*/}
+                {/*<img src={Beschriftung} alt={"Beschriftung"} className={`Beschriftung ${abfrage ? 'ko' : ''}`}/>*/}
             </div>
             {/*<button onClick={abfrageWetter}>Wetter</button>*/}
 

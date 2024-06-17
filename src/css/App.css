@@ -45,7 +45,7 @@ html, body {
 
 /*Warnung Grundfläche*/
 .warnung {
-    width: 750px;
+    width: 900px;
     height: 75px;
     background-color: rgba(228, 31, 214, 0.8); /* Background color with transparency */
     /*margin-top: 100px;*/
@@ -56,11 +56,11 @@ html, body {
     font-size: 54px;
     color: white;
     white-space: nowrap;
-    animation: scroll 12s linear infinite;
+    animation: scroll 15s linear infinite;
 }
 
 .scroll-container {
-    width: 60%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -210,8 +210,8 @@ h3 {
 
 .ausgabeabfrage {
     font-family: 'Inter', sans-serif;
-    width: 650px;
-    height: 150px;
+    width: 680px;
+    height: 125px;
     font-size: 24px;
     background-color: black;
     color: white;
@@ -219,20 +219,27 @@ h3 {
 
     display: flex;
     flex-direction: column; /* Ändere die Ausrichtung auf vertikal */
-    align-items: center;
+    /*align-items: left;*/
     justify-content: space-between; /* Verteile den Platz zwischen den Elementen */
 }
 
 .main-content {
+    /*border: 1px solid red;*/
     display: flex;
+    height: 75px;
     flex-direction: row; /* Behalte die horizontale Ausrichtung für den Hauptinhalt */
     align-items: center;
+    /*margin-top: 10px;*/
 }
 
 .needs{
+    /*border: 1px solid green;*/
     display: flex;
+    height: 75px;
     flex-direction: row; /* Behalte die horizontale Ausrichtung für den Hauptinhalt */
     align-items: center;
+    margin-left: 30px;
+    margin-top: 0;
 }
 
 
@@ -296,7 +303,7 @@ img.Vector{
     position: absolute;
     right: -50%;
     top: 0;
-    width: 650px;
+    width: 700px;
     height: 900px;
     transition: right 2s 0.1s;
 
@@ -309,41 +316,41 @@ img.Vector{
 }
 
 /*Beschriftung Pfeil Position*/
-.Beschriftung{
-    position: absolute;
-    right: -45%;
-    top: 15em;
-    width: 107px;
-    height: 20px;
-    transition: right 2s 0.1s;
+/*.Beschriftung{*/
+/*    position: absolute;*/
+/*    right: -45%;*/
+/*    top: 15em;*/
+/*    width: 107px;*/
+/*    height: 20px;*/
+/*    transition: right 2s 0.1s;*/
 
-}
-.Beschriftung.ko {
-    position: absolute;
-    right: 4em;
-    top: 15em;
-    width: 107px;
-    height: 20px;
-    animation: bounce2 2s ease infinite;
-}
+/*}*/
+/*.Beschriftung.ko {*/
+/*    position: absolute;*/
+/*    right: 4em;*/
+/*    top: 15em;*/
+/*    width: 107px;*/
+/*    height: 20px;*/
+/*    animation: bounce2 2s ease infinite;*/
+/*}*/
 
 
-.Pfeil{
-    position: absolute;
-    right: -45%;
-    top: 9em;
-    width: 107px;
-    height: 100px;
-    transition: right 2s 0.1s;
-}
-.Pfeil.ok{
-    position: absolute;
-    right: 4em;
-    top: 9em;
-    width: 107px;
-    height: 100px;
-    animation: bounce2 2s ease infinite;
-}
+/*.Pfeil{*/
+/*    position: absolute;*/
+/*    right: -45%;*/
+/*    top: 9em;*/
+/*    width: 107px;*/
+/*    height: 100px;*/
+/*    transition: right 2s 0.1s;*/
+/*}*/
+/*.Pfeil.ok{*/
+/*    position: absolute;*/
+/*    right: 4em;*/
+/*    top: 9em;*/
+/*    width: 107px;*/
+/*    height: 100px;*/
+/*    animation: bounce2 2s ease infinite;*/
+/*}*/
 
 
 @keyframes bounce2 {
@@ -438,5 +445,75 @@ img.Vector{
     margin-bottom: 20px;
 }
 
+.dreieck{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid magenta;
+    position: absolute;
+
+
+    right: -47%;
+    top: 10.5em;
+    transition: right 2s 0.1s;
+    z-index: 99;
+}
+
+.dreieck.ok{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid magenta;
+    position: absolute;
+
+
+    right: 3em;
+    top: 10.5em;
+    animation: bounce2 2s ease infinite;
+}
+.supportercare{
+    width: 100px;
+    height: 20px;
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: -47%;
+    top: 24em;
+    transition: right 2s 0.1s;
+
+    z-index: 99;
+
+}
+
+.supportercare.ko{
+    width: 100px;
+    height: 20px;
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: 4.4em;
+    top: 24.3em;
+    animation: bounce2 2s ease infinite;
+
+    z-index: 99;
+
+}
+.supportercheckin{
+
+}
 
 
