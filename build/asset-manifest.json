@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.d676fe25.css",
-    "main.js": "/static/js/main.5428c8d4.js",
-    "static/js/453.c0829641.chunk.js": "/static/js/453.c0829641.chunk.js",
+    "main.css": "/static/css/main.fc82d3b6.css",
+    "main.js": "/static/js/main.24496864.js",
+    "static/js/453.da752d82.chunk.js": "/static/js/453.da752d82.chunk.js",
     "static/media/supporter-sheme-3 1.png": "/static/media/supporter-sheme-3 1.bfb8588434c1f1ef6d41.png",
+    "static/media/zuschnitt-karte.png": "/static/media/zuschnitt-karte.c32fd894fcbddf3ee481.png",
     "static/media/grafik 1.png": "/static/media/grafik 1.29676a5cf0a092b3b79b.png",
-    "static/media/map.png": "/static/media/map.ef13d9fcfcbb13ec83aa.png",
     "static/media/reload-stencil-regular.woff": "/static/media/reload-stencil-regular.049af2c19e5ef5925cea.woff",
     "static/media/reload-stencil-regular.woff2": "/static/media/reload-stencil-regular.a5e249ad498831a97769.woff2",
     "static/media/inter-v12-latin-regular.woff2": "/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
     "index.html": "/index.html",
-    "main.d676fe25.css.map": "/static/css/main.d676fe25.css.map",
-    "main.5428c8d4.js.map": "/static/js/main.5428c8d4.js.map",
-    "453.c0829641.chunk.js.map": "/static/js/453.c0829641.chunk.js.map"
+    "main.fc82d3b6.css.map": "/static/css/main.fc82d3b6.css.map",
+    "main.24496864.js.map": "/static/js/main.24496864.js.map",
+    "453.da752d82.chunk.js.map": "/static/js/453.da752d82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d676fe25.css",
-    "static/js/main.5428c8d4.js"
+    "static/css/main.fc82d3b6.css",
+    "static/js/main.24496864.js"
   ]
 }

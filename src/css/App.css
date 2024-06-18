@@ -194,19 +194,7 @@ h3 {
 }
 /*######################################*/
 
-/*.ausgabeabfrage{*/
-/*    font-family: 'Inter', sans-serif;*/
-/*    width: 650px;*/
-/*    height: 175px;*/
-/*    font-size: 24px;*/
-/*    background-color: black;*/
-/*    color: white;*/
-/*    margin-top: 20px;*/
 
-/*    display: flex; !* Flexbox *!*/
-/*    !*justify-content: center; !* Horizontal zentrieren *!*!*/
-/*    align-items: center; !* Vertikal zentrieren *!*/
-/*}*/
 
 .ausgabeabfrage {
     font-family: 'Inter', sans-serif;
@@ -310,47 +298,168 @@ img.Vector{
 }
 
 /*Position Karte bei Abfrage*/
-.Karte.in {
+.Karte.left {
     right: 0;
     z-index: -1;
 }
 
-/*Beschriftung Pfeil Position*/
-/*.Beschriftung{*/
-/*    position: absolute;*/
-/*    right: -45%;*/
-/*    top: 15em;*/
-/*    width: 107px;*/
-/*    height: 20px;*/
-/*    transition: right 2s 0.1s;*/
+/*Dreieck Supporter:innen Care*/
 
-/*}*/
-/*.Beschriftung.ko {*/
-/*    position: absolute;*/
-/*    right: 4em;*/
-/*    top: 15em;*/
-/*    width: 107px;*/
-/*    height: 20px;*/
-/*    animation: bounce2 2s ease infinite;*/
-/*}*/
+/*Grundposition*/
+.dreieckSupportercare{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid magenta;
+    position: absolute;
 
 
-/*.Pfeil{*/
-/*    position: absolute;*/
-/*    right: -45%;*/
-/*    top: 9em;*/
-/*    width: 107px;*/
-/*    height: 100px;*/
-/*    transition: right 2s 0.1s;*/
-/*}*/
-/*.Pfeil.ok{*/
-/*    position: absolute;*/
-/*    right: 4em;*/
-/*    top: 9em;*/
-/*    width: 107px;*/
-/*    height: 100px;*/
-/*    animation: bounce2 2s ease infinite;*/
-/*}*/
+    right: -47%;
+    top: 10.5em;
+    transition: right 2s 0.1s;
+    z-index: 99;
+}
+/*Position Links*/
+.dreieckSupportercare.left{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid magenta;
+    position: absolute;
+
+
+    right: 3em;
+    top: 10.5em;
+    animation: bounce2 2s ease infinite;
+}
+
+
+
+
+
+
+/*Schriftzug Supporter:innen Care*/
+.supportercare{
+    width: 125px;
+    height: 20px;
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: -48%;
+    top: 24em;
+    transition: right 2s 0.1s;
+
+    z-index: 99;
+
+}
+
+.supportercare.left{
+    /*width: 125px;*/
+    height: 20px;
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: 3.25em;
+    top: 24.3em;
+    animation: bounce2 2s ease infinite;
+
+    z-index: 99;
+
+}
+
+.dreieckCheckin{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid magenta;
+    position: absolute;
+
+
+    right: -23.5%;
+    top: 27em;
+    transition: right 2s 0.1s;
+    z-index: 99;
+
+}
+
+.dreieckCheckin.left{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid magenta;
+    position: absolute;
+
+    right: 24em;
+    top: 28em;
+    animation: bounce2 2s ease infinite;
+
+    z-index: 99;
+}
+
+.checkin{
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    background-color: white;
+    width: 150px;
+    height: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: -25%;
+    top: 38em;
+    transition: right 2s 0.1s;
+
+    z-index: 99;
+}
+
+.checkin.left{
+    font-family: 'ReloadStencil-Regular', sans-serif;
+    font-size: 11px;
+    background-color: white;
+    width: 150px;
+    height: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    right: 32.5em;
+    top: 39em;
+    animation: bounce2 2s ease infinite;
+
+    z-index: 99;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @keyframes bounce2 {
@@ -368,7 +477,7 @@ img.Vector{
 .box.boxleft{
     /*transform: translateX(calc((1600px - 110%) / 2 * -1));*/
     transform: translateX(calc((1440px - 110%) / 2 * -1));
-    transition: transform 3s 0.1s;
+    transition: transform 2s 0.1s;
     margin-bottom: 60px;
     /*margin-top: 20px;*/
 }
@@ -445,75 +554,5 @@ img.Vector{
     margin-bottom: 20px;
 }
 
-.dreieck{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid magenta;
-    position: absolute;
-
-
-    right: -47%;
-    top: 10.5em;
-    transition: right 2s 0.1s;
-    z-index: 99;
-}
-
-.dreieck.ok{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid magenta;
-    position: absolute;
-
-
-    right: 3em;
-    top: 10.5em;
-    animation: bounce2 2s ease infinite;
-}
-.supportercare{
-    width: 100px;
-    height: 20px;
-    font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
-    text-align: center;
-    background-color: white;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-
-    right: -47%;
-    top: 24em;
-    transition: right 2s 0.1s;
-
-    z-index: 99;
-
-}
-
-.supportercare.ko{
-    width: 100px;
-    height: 20px;
-    font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
-    text-align: center;
-    background-color: white;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-
-    right: 4.4em;
-    top: 24.3em;
-    animation: bounce2 2s ease infinite;
-
-    z-index: 99;
-
-}
-.supportercheckin{
-
-}
 
 

@@ -20,8 +20,8 @@ const App: FC = () => {
     const [warnung, setWarnung] = useState<boolean>(false);
     const [warnungText, setWarnungText] = useState<string | null>(null);
     const exampleDate = dayjs('2023.01.01');
+    // const exampleDate = dayjs('now');
     const [noData, setNoData] = useState<boolean>(false);
-    // const [zaehler, setZaehler] = useState<number>(0);
     const [lastScannedId, setLastScannedId] = useState<string>("");
     const [scanTimeout, setScanTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -31,50 +31,7 @@ const App: FC = () => {
     const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
     const resetTime = 15000; // 15 Sekunden -> Zeit nach der eine ID wieder gescannt werden kann
 
-    //Wetter Daten werden Geladen
-    const fetchWeatherData = async () => {
-        const apiKey = '4d1adda53bf636a53408d0cd1c5ba7b4';
-        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-        const city = 'Lärz';
-        const units = 'metric';
 
-        const url = `${apiUrl}?q=${encodeURIComponent(city)}&units=${units}&appid=${apiKey}`;
-
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('Failed to fetch weather data');
-            }
-            const abfrageWetter = await response.json();
-            setDataWeather(abfrageWetter);
-            // console.log('Weather data:', abfrageWetter);
-            return abfrageWetter;
-        } catch (error) {
-            console.error('Error fetching weather data:', error);
-            throw error;
-        }
-    };
-
-// Funktion, die alle 20 Minuten die Daten aktualisiert
-    const fetchWeatherPeriodically = () => {
-        const interval = setInterval(async () => {
-            try {
-                await fetchWeatherData();
-            } catch (error) {
-                console.error('Error fetching weather data:', error);
-            }
-        }, 20 * 60 * 1000); // 20 Minuten in Millisekunden umgerechnet
-
-        // Initialen Aufruf außerhalb des Intervals
-        fetchWeatherData();
-
-        // Rückgabe einer Funktion zum Beenden des Intervals, falls nötig
-        return () => clearInterval(interval);
-    };
-
-    useEffect(() => {
-        fetchWeatherPeriodically();
-    }, []);
 
 
     // Lookup-Tabellen
@@ -162,26 +119,76 @@ const App: FC = () => {
         }
     };
 
-    // useEffect(() => {
-    //     if (noData) {
-    //         const timer = setTimeout(() => {
-    //             setNoData(false);
-    //             setWarnung(false);
-    //             setAbfrage(false);
-    //         }, kurz); // 3 seconds
-    //         return () => clearTimeout(timer);
-    //     }
-    //
-    //     if (abfrage) {
-    //         const timeoutDauer = warnung ? lang : normal;
-    //         const timer = setTimeout(() => {
-    //             setAbfrage(false);
-    //             setWarnung(false);
-    //         }, timeoutDauer);
-    //         return () => clearTimeout(timer);
-    //     }
-    //
-    // }, [abfrage, warnung, normal, lang, kurz, noData]);
+
+    //Wetter Daten werden Geladen
+    const fetchWeatherData = async () => {
+        const apiKey = '4d1adda53bf636a53408d0cd1c5ba7b4';
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+        const city = 'Lärz';
+        const units = 'metric';
+
+        const url = `${apiUrl}?q=${encodeURIComponent(city)}&units=${units}&appid=${apiKey}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Failed to fetch weather data');
+            }
+            const abfrageWetter = await response.json();
+            setDataWeather(abfrageWetter);
+            // console.log('Weather data:', abfrageWetter);
+            return abfrageWetter;
+        } catch (error) {
+            console.error('Error fetching weather data:', error);
+            throw error;
+        }
+    };
+
+    // Funktion, die alle 20 Minuten die Daten aktualisiert
+    const fetchWeatherPeriodically = () => {
+        const interval = setInterval(async () => {
+            try {
+                await fetchWeatherData();
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }, 20 * 60 * 1000); // 20 Minuten in Millisekunden umgerechnet
+
+        // Initialen Aufruf außerhalb des Intervals
+        fetchWeatherData();
+
+        // Rückgabe einer Funktion zum Beenden des Intervals, falls nötig
+        return () => clearInterval(interval);
+    };
+
+
+    // useEffect Wetter
+    useEffect(() => {
+        fetchWeatherPeriodically();
+    }, []);
+
+
+    // useEffect Zeit der Abfrage
+    useEffect(() => {
+        if (noData) {
+            const timer = setTimeout(() => {
+                setNoData(false);
+                setWarnung(false);
+                setAbfrage(false);
+            }, kurz); // 3 seconds
+            return () => clearTimeout(timer);
+        }
+
+        if (abfrage) {
+            const timeoutDauer = warnung ? lang : normal;
+            const timer = setTimeout(() => {
+                setAbfrage(false);
+                setWarnung(false);
+            }, timeoutDauer);
+            return () => clearTimeout(timer);
+        }
+
+    }, [abfrage, warnung, normal, lang, kurz, noData]);
 
     return (
         <div>
@@ -210,8 +217,6 @@ const App: FC = () => {
                                     </div>
                                 ) : null}
                             </div>
-                            {/*<img src={KarteStartpage} alt={"KarteStartpage"} className={"option-karte"}/>*/}
-                            {/*<div className={"option-karte"}><p className={"frage"}>Karte?</p></div>*/}
                         </>
                     ) : (
                         <>
@@ -222,8 +227,6 @@ const App: FC = () => {
                                     </div>
                                 </div>
                             )}
-                            {/*<h2>Supporter:innen Schichtauskunft</h2>*/}
-                            {/*<h3>Supporter Shiftinformation</h3>*/}
                             {data ? (
                                 <>
                                     <h4 className={"deutsch-ausgabe"}>Deine Schichten</h4>
@@ -261,11 +264,12 @@ const App: FC = () => {
                         </>
                     )}
                 </div>
-                <div className={`dreieck${abfrage ? ' ok' : ''}`}></div>
-                <div className={`supportercare${abfrage ? ' ko' : ''}`}>Supporter Care</div>
-                <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' in' : ''}`} />
-                {/*<img src={Pfeil} alt={"Pfeil"} className={`Pfeil ${abfrage ? 'ok' : ''}`}/>*/}
-                {/*<img src={Beschriftung} alt={"Beschriftung"} className={`Beschriftung ${abfrage ? 'ko' : ''}`}/>*/}
+                <div className={`dreieckSupportercare${abfrage ? ' left' : ''}`}></div>
+                <div className={`supportercare${abfrage ? ' left' : ''}`}>Supporter:innen Care</div>
+                <div className={`dreieckCheckin${abfrage ? ' left' : ''}`}></div>
+                <div className={`checkin${abfrage ? ' left' : ''}`}>Supporter:innen Check-In</div>
+                <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' left' : ''}`} />
+
             </div>
             {/*<button onClick={abfrageWetter}>Wetter</button>*/}
 
