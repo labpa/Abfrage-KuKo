@@ -169,26 +169,26 @@ const App: FC = () => {
 
 
     // useEffect Zeit der Abfrage
-    useEffect(() => {
-        if (noData) {
-            const timer = setTimeout(() => {
-                setNoData(false);
-                setWarnung(false);
-                setAbfrage(false);
-            }, kurz); // 3 seconds
-            return () => clearTimeout(timer);
-        }
-
-        if (abfrage) {
-            const timeoutDauer = warnung ? lang : normal;
-            const timer = setTimeout(() => {
-                setAbfrage(false);
-                setWarnung(false);
-            }, timeoutDauer);
-            return () => clearTimeout(timer);
-        }
-
-    }, [abfrage, warnung, normal, lang, kurz, noData]);
+    // useEffect(() => {
+    //     if (noData) {
+    //         const timer = setTimeout(() => {
+    //             setNoData(false);
+    //             setWarnung(false);
+    //             setAbfrage(false);
+    //         }, kurz); // 3 seconds
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    //     if (abfrage) {
+    //         const timeoutDauer = warnung ? lang : normal;
+    //         const timer = setTimeout(() => {
+    //             setAbfrage(false);
+    //             setWarnung(false);
+    //         }, timeoutDauer);
+    //         return () => clearTimeout(timer);
+    //     }
+    //
+    // }, [abfrage, warnung, normal, lang, kurz, noData]);
 
     return (
         <div>
@@ -244,9 +244,8 @@ const App: FC = () => {
                                                         <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
                                                     </div>
                                                     <p className={"needs"}>Das hier sollten maximal 50 Zeichen sein 123456789</p>
-                                                    <br />
+                                                    {/*<br />*/}
                                                 </div>
-
                                             ))
                                     ) : (
                                         <p></p>

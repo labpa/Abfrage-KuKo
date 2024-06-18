@@ -169,7 +169,7 @@ h3 {
     display: flex; /* Flexbox */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
-    margin-left: 200px;
+    margin-left: 400px;
 }
 
 .englisch-ausgabe-no {
@@ -184,7 +184,7 @@ h3 {
     display: flex; /* Flexbox */
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
-    margin-left: 200px;
+    margin-left: 500px;
 }
 
 .noDataLeft{
@@ -294,7 +294,6 @@ img.Vector{
     width: 700px;
     height: 900px;
     transition: right 2s 0.1s;
-
 }
 
 /*Position Karte bei Abfrage*/
@@ -315,7 +314,7 @@ img.Vector{
     position: absolute;
 
 
-    right: -47%;
+    right: -44%;
     top: 10.5em;
     transition: right 2s 0.1s;
     z-index: 99;
@@ -326,11 +325,11 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid magenta;
+    border-bottom: 100px solid black;
     position: absolute;
 
 
-    right: 3em;
+    right: 5em;
     top: 10.5em;
     animation: bounce2 2s ease infinite;
 }
@@ -342,10 +341,10 @@ img.Vector{
 
 /*Schriftzug Supporter:innen Care*/
 .supportercare{
-    width: 125px;
-    height: 20px;
+    width: 275px;
+    height: 30px;
     font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
+    font-size: 24px;
     text-align: center;
     background-color: white;
     align-items: center;
@@ -353,19 +352,17 @@ img.Vector{
     justify-content: center;
     position: absolute;
 
-    right: -48%;
-    top: 24em;
+    right: -50%;
+    top: 11em;
     transition: right 2s 0.1s;
 
     z-index: 99;
-
 }
 
 .supportercare.left{
-    /*width: 125px;*/
-    height: 20px;
+    height: 30px;
     font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
+    font-size: 24px;
     text-align: center;
     background-color: white;
     align-items: center;
@@ -373,12 +370,11 @@ img.Vector{
     justify-content: center;
     position: absolute;
 
-    right: 3.25em;
-    top: 24.3em;
+    right: 0.1em;
+    top: 11em;
     animation: bounce2 2s ease infinite;
 
     z-index: 99;
-
 }
 
 .dreieckCheckin{
@@ -386,7 +382,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid magenta;
+    border-top: 100px solid black;
     position: absolute;
 
 
@@ -394,7 +390,6 @@ img.Vector{
     top: 27em;
     transition: right 2s 0.1s;
     z-index: 99;
-
 }
 
 .dreieckCheckin.left{
@@ -402,7 +397,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid magenta;
+    border-top: 100px solid black;
     position: absolute;
 
     right: 24em;
@@ -414,17 +409,17 @@ img.Vector{
 
 .checkin{
     font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
+    font-size: 24px;
     background-color: white;
-    width: 150px;
-    height: 20px;
+    width: 325px;
+    height: 30px;
     align-items: center;
     display: flex;
     justify-content: center;
     position: absolute;
 
-    right: -25%;
-    top: 38em;
+    right: -31%;
+    top: 16.8em;
     transition: right 2s 0.1s;
 
     z-index: 99;
@@ -432,33 +427,23 @@ img.Vector{
 
 .checkin.left{
     font-family: 'ReloadStencil-Regular', sans-serif;
-    font-size: 11px;
+    font-size: 24px;
+    width: 325px;
+    height: 30px;
     background-color: white;
-    width: 150px;
-    height: 20px;
+
     align-items: center;
     display: flex;
     justify-content: center;
     position: absolute;
 
-    right: 32.5em;
-    top: 39em;
+    right: 11.5em;
+    top: 17.4em;
     animation: bounce2 2s ease infinite;
 
     z-index: 99;
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
