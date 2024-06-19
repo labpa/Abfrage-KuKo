@@ -112,3 +112,7 @@ https://github.com/kybarg/react-barcode-reader
 
 ### Monitore 
 + Einrichten der Monitore, dass ansicht "Kopfüber" ist
+
+## Todo Sonstiges
+### Anleitung schreiben
++ Anleitung für Terminals schreiben und Drucken
