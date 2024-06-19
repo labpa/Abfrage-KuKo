@@ -72,24 +72,43 @@ https://github.com/kybarg/react-barcode-reader
 
 
 
-# Todo
-## ~~Karte~~
+##  Todo Software
+### ~~Karte~~
 + ~~hinzufügen der neuen Supporter:innen Karte 2024~~
 
-## ~~Supporter:innen~~
+### ~~Supporter:innen~~
 + ~~Aus Supporter soll Supporter:innen werden~~
 
-## ~~Wetter~~
+### ~~Wetter~~
 + ~~Anzeige auf Startseite Wetterbericht~~
 
-## Foto aus Startseite
+### Foto aus Startseite
 + Tauschen des Fotos auf der Startseite -> Supporter:innen bändchen
 
-## Datum
+### Datum
 + Das Datum muss noch auf now geändert werden.
 
-## Endpunkt Schichtinformation
+### Endpunkt Schichtinformation
 + Der Endpunkt muss noch hinzugefügt werden. Aktuell keine Informationen aus der API
 
-## Testen der aktuellen Schichten 
+### Testen der aktuellen Schichten 
 + Testen mit aktuellem Datum und Datum das während des Festivals liegt
+
+## Todo Hardware
+### Rechner Testen
++ ~~Alle Rechner einmal starten und Testen~~
+
+### Upgrade und Update
++ ~~Alle rechner Updaten und Upgraden~~
+
+### Neue software Testen
++ ~~Testen Kiosk Modus~~
++ ~~Testen mit Netlify~~
++ ~~Testen NFC-Scanner mit Netlify~~
++ Testen NFC-Scanner mit eigenem Deployment
+
+### Umstellen Kioskmodus
++ **!!!Eigenes Deployment in URL anpassen!!!**
+
+### Monitore 
++ Einrichten der Monitore, dass ansicht "Kopfüber" ist
