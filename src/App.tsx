@@ -152,7 +152,7 @@ const App: FC = () => {
             } catch (error) {
                 console.error('Error fetching weather data:', error);
             }
-        }, 20 * 60 * 1000); // 20 Minuten in Millisekunden umgerechnet
+        }, 15 * 60 * 1000); // 15 Minuten in Millisekunden umgerechnet
 
         // Initialen Aufruf außerhalb des Intervals
         fetchWeatherData();
