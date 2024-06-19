@@ -73,11 +73,23 @@ https://github.com/kybarg/react-barcode-reader
 
 
 # Todo
-## Karte
-+ hinzufügen der neuen Supporter:innen Karte 2024
+## ~~Karte~~
++ ~~hinzufügen der neuen Supporter:innen Karte 2024~~
 
-## Supporter:innen
-+ Aus Supporter soll Supporter:innen werden
+## ~~Supporter:innen~~
++ ~~Aus Supporter soll Supporter:innen werden~~
 
-## Wetter
-+ Anzeige Linksunten Wetterbericht
+## ~~Wetter~~
++ ~~Anzeige auf Startseite Wetterbericht~~
+
+## Foto aus Startseite
++ Tauschen des Fotos auf der Startseite -> Supporter:innen bändchen
+
+## Datum
++ Das Datum muss noch auf now geändert werden.
+
+## Endpunkt Schichtinformation
++ Der Endpunkt muss noch hinzugefügt werden. Aktuell keine Informationen aus der API
+
+## Testen der aktuellen Schichten 
++ Testen mit aktuellem Datum und Datum das während des Festivals liegt
