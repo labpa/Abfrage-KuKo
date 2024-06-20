@@ -189,7 +189,8 @@ h3 {
 
 .noDataLeft{
     transform: translateX(calc((1440px - 110%) / 2 * -1));
-    transition: transform 3s 0.1s;
+    /*transition: transform 3s 0.1s;*/
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     margin-bottom: 320px;
 }
 /*######################################*/
@@ -293,13 +294,17 @@ img.Vector{
     top: 0;
     width: 700px;
     height: 900px;
-    transition: right 2s 0.1s;
+    /*transition: right 2s 0.1s;*/
+    transition: right 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+
 }
 
 /*Position Karte bei Abfrage*/
 .Karte.left {
     right: 0;
     z-index: -1;
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+
 }
 
 /*Dreieck Supporter:innen Care*/
@@ -316,7 +321,8 @@ img.Vector{
 
     right: -44%;
     top: 10.5em;
-    transition: right 2s 0.1s;
+    /*transition: right 2s 0.1s;*/
+    transition: right 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     z-index: 99;
 }
 /*Position Links*/
@@ -328,15 +334,12 @@ img.Vector{
     border-bottom: 100px solid black;
     position: absolute;
 
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
 
     right: 5em;
     top: 10.5em;
     animation: bounce2 2s ease infinite;
 }
-
-
-
-
 
 
 /*Schriftzug Supporter:innen Care*/
@@ -354,8 +357,8 @@ img.Vector{
 
     right: -50%;
     top: 11em;
-    transition: right 2s 0.1s;
-
+    /*transition: right 2s 0.1s;*/
+    transition: right 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     z-index: 99;
 }
 
@@ -372,6 +375,8 @@ img.Vector{
 
     right: 0.1em;
     top: 11em;
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+
     animation: bounce2 2s ease infinite;
 
     z-index: 99;
@@ -388,7 +393,8 @@ img.Vector{
 
     right: -23.5%;
     top: 27em;
-    transition: right 2s 0.1s;
+    /*transition: right 2s 0.1s;*/
+    transition: right 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     z-index: 99;
 }
 
@@ -402,6 +408,8 @@ img.Vector{
 
     right: 24em;
     top: 28em;
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+
     animation: bounce2 2s ease infinite;
 
     z-index: 99;
@@ -420,7 +428,8 @@ img.Vector{
 
     right: -31%;
     top: 16.8em;
-    transition: right 2s 0.1s;
+    /*transition: right 2s 0.1s;*/
+    transition: right 0.1s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
 
     z-index: 99;
 }
@@ -439,6 +448,8 @@ img.Vector{
 
     right: 11.5em;
     top: 17.4em;
+    transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
+
     animation: bounce2 2s ease infinite;
 
     z-index: 99;
@@ -462,7 +473,8 @@ img.Vector{
 .box.boxleft{
     /*transform: translateX(calc((1600px - 110%) / 2 * -1));*/
     transform: translateX(calc((1440px - 110%) / 2 * -1));
-    transition: transform 2s 0.1s;
+    /*transition: transform 2s 0.1s;*/
+    transition: transform 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
     margin-bottom: 60px;
     /*margin-top: 20px;*/
 }
@@ -538,6 +550,3 @@ img.Vector{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-
-
