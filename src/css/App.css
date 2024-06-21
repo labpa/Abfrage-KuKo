@@ -546,10 +546,10 @@ img.Vector{
     width: 50px;
     height: 40px;
     position: absolute;
-    right: 16.7em;
+    right: 16.3em;
     bottom: 0.5em;
     /*top: 0.5em;*/
-    color: rgba(255, 255, 255, 0.6); /* Fully transparent */
+    color: rgba(255, 255, 255, 0.4); /* Fully transparent */
 }
 .uhrzeit.left{
     font-family: 'ReloadStencil-Regular', sans-serif;

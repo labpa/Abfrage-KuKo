@@ -184,7 +184,7 @@ const App: FC = () => {
     return (
         <div>
             <div className={"grundflaeche"}>
-                <div className={`uhrzeit${abfrage ? ' left' : ''}`}>10100100000</div>
+                <div className={`uhrzeit${abfrage ? ' left' : ''}`}>I0I00I00000</div>
                 <div className={!abfrage ? "box" : "box boxleft"}>
                     {!abfrage ? (
                         <>
