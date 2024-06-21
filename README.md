@@ -83,16 +83,16 @@ https://github.com/kybarg/react-barcode-reader
 + ~~Anzeige auf Startseite Wetterbericht~~
 
 ### Foto aus Startseite
-+ Tauschen des Fotos auf der Startseite -> Supporter:innen bändchen
++ ~~Tauschen des Fotos auf der Startseite -> Supporter:innen bändchen~~
 
 ### Datum
-+ Das Datum muss noch auf now geändert werden.
++ ~~Das Datum muss noch auf now geändert werden.~~
 
 ### Endpunkt Schichtinformation
-+ Der Endpunkt muss noch hinzugefügt werden. Aktuell keine Informationen aus der API
++ ~~Der Endpunkt muss noch hinzugefügt werden. Aktuell keine Informationen aus der API~~
 
 ### Testen der aktuellen Schichten 
-+ Testen mit aktuellem Datum und Datum das während des Festivals liegt
++ ~~Testen mit aktuellem Datum und Datum das während des Festivals liegt~~
 
 ## Todo Hardware
 ### Rechner Testen

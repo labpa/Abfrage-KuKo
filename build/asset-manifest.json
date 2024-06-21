@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.78c42f96.css",
-    "main.js": "/static/js/main.a1a068fd.js",
+    "main.css": "/static/css/main.962e94dc.css",
+    "main.js": "/static/js/main.3757d318.js",
     "static/js/453.da752d82.chunk.js": "/static/js/453.da752d82.chunk.js",
     "static/media/supporter-benzel.png": "/static/media/supporter-benzel.a4f430d2820ab4476dbf.png",
     "static/media/supporter-sheme-3 1.png": "/static/media/supporter-sheme-3 1.bfb8588434c1f1ef6d41.png",
-    "static/media/zuschnitt-karte.png": "/static/media/zuschnitt-karte.c32fd894fcbddf3ee481.png",
+    "static/media/sup-karte-zuschnitt-vier.png": "/static/media/sup-karte-zuschnitt-vier.6c1fc0407e871aed049d.png",
     "static/media/reload-stencil-regular.woff": "/static/media/reload-stencil-regular.049af2c19e5ef5925cea.woff",
     "static/media/reload-stencil-regular.woff2": "/static/media/reload-stencil-regular.a5e249ad498831a97769.woff2",
     "static/media/inter-v12-latin-regular.woff2": "/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
     "index.html": "/index.html",
-    "main.78c42f96.css.map": "/static/css/main.78c42f96.css.map",
-    "main.a1a068fd.js.map": "/static/js/main.a1a068fd.js.map",
+    "main.962e94dc.css.map": "/static/css/main.962e94dc.css.map",
+    "main.3757d318.js.map": "/static/js/main.3757d318.js.map",
     "453.da752d82.chunk.js.map": "/static/js/453.da752d82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78c42f96.css",
-    "static/js/main.a1a068fd.js"
+    "static/css/main.962e94dc.css",
+    "static/js/main.3757d318.js"
   ]
 }

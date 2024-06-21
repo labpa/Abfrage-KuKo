@@ -1,16 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import dayjs from "dayjs";
 import './css/App.css';
-// import benzel from '../src/images/app/grafik 1.png';
-import benzel from '../src/images/app/supporter-benzel.png'
-// import benzel from '../src/images/app/supporter-benzel-zwei.png'
+import benzel from './images/app/benzel-supporter.png'
 import Vector from '../src/images/app/Vector.png';
-// import Karte from '../src/images/app/map.png';
-// import KarteNeu from '../src/images/app/map-startpage.png';
-// import Karte from '../src/images/app/sup_karte.png';
-import Karte from '../src/images/app/zuschnitt-karte.png'
-import Pfeil from '../src/images/app/pfeil.png';
-import Beschriftung from '../src/images/app/beschriftung.png';
+import Karte from './images/app/karte-supporter.png'
 import BarcodeReader from 'react-barcode-reader';
 
 
@@ -21,8 +14,8 @@ const App: FC = () => {
     const [abfrage, setAbfrage] = useState<boolean>(false);
     const [warnung, setWarnung] = useState<boolean>(false);
     const [warnungText, setWarnungText] = useState<string | null>(null);
-    const exampleDate = dayjs('2023.01.01');
-    // const exampleDate = dayjs('now');
+    // const exampleDate = dayjs('2024-06-31');
+    const exampleDate = dayjs();
     const [noData, setNoData] = useState<boolean>(false);
     const [lastScannedId, setLastScannedId] = useState<string>("");
     const [scanTimeout, setScanTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -32,9 +25,6 @@ const App: FC = () => {
     const lang = 20000; // 20 Sekunden -> Abfrage mit Warnung
     const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
     const resetTime = 15000; // 15 Sekunden -> Zeit nach der eine ID wieder gescannt werden kann
-
-
-
 
     // Lookup-Tabellen
     const waitingSpot: Record<string, string> = {
@@ -138,7 +128,6 @@ const App: FC = () => {
             }
             const abfrageWetter = await response.json();
             setDataWeather(abfrageWetter);
-            // console.log('Weather data:', abfrageWetter);
             return abfrageWetter;
         } catch (error) {
             console.error('Error fetching weather data:', error);
@@ -195,6 +184,7 @@ const App: FC = () => {
     return (
         <div>
             <div className={"grundflaeche"}>
+                <div className={`uhrzeit${abfrage ? ' left' : ''}`}>10100100000</div>
                 <div className={!abfrage ? "box" : "box boxleft"}>
                     {!abfrage ? (
                         <>
@@ -219,6 +209,7 @@ const App: FC = () => {
                                     </div>
                                 ) : null}
                             </div>
+
                         </>
                     ) : (
                         <>
@@ -245,8 +236,7 @@ const App: FC = () => {
                                                         <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
                                                         <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
                                                     </div>
-                                                    <p className={"needs"}>Das hier sollten maximal 50 Zeichen sein 123456789</p>
-                                                    {/*<br />*/}
+                                                    <p className="needs">{entry.description.replace(/#\d+\s*/, '')}</p>
                                                 </div>
                                             ))
                                     ) : (
@@ -272,9 +262,8 @@ const App: FC = () => {
                 <img src={Karte} alt={"Karte"} className={`Karte${abfrage ? ' left' : ''}`} />
 
             </div>
-            {/*<button onClick={abfrageWetter}>Wetter</button>*/}
 
-            <div className={"wip"}>
+            <div className={"barcodeReader"}>
                 <BarcodeReader
                     onError={handleError}
                     onScan={handleScan}
