@@ -1,0 +1,48 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: docker:dind
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="latest"
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = '$tag'"
+        cp conf/staging.js src/config/config.js
+        sed -i '4i\"homepage\": \"https://backend.test.supporter.kulkos.net",' package.json
+        docker-compose build
+        docker-compose push
+      elif [[ "$CI_COMMIT_BRANCH" =~ ^(release)\/[0-9._-]+$ ]]; then
+        tag="${CI_COMMIT_REF_SLUG//release-/}"
+        tag="${tag//-/.}"
+        echo "Running on release branch '$CI_COMMIT_BRANCH': tag = $tag"
+        cp conf/production.js src/config/config.js
+        sed -i '4i\"homepage\": \"https://backend.supporter.kulturkosmos.de\",' package.json
+        docker-compose build
+        docker-compose push
+      else
+        tag="$CI_COMMIT_REF_SLUG"
+        echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
+        docker-compose build
+        docker-compose push
+      fi
+
+deploy_production:
+  stage: deploy
+  image: alpine:3.12.2
+  before_script:
+    - apk add curl
+  script:
+    - |
+      curl -f -H "Authorization: Bearer $RANCHER_BEARER"  -k -s 'https://rancher.kulkos.net/v3/project/c-m-k26r77wt:p-l2lj9/workloads/deployment:subbotnik-production:subottnik-prod-selfservice?action=redeploy' -X POST -H "Accept: application/json" -H "Content-Type: application/json"
+  environment:
+    name: production
+  when: always
+  only:
+    - /^release.*$/
