@@ -14,7 +14,7 @@ const App: FC = () => {
     const [abfrage, setAbfrage] = useState<boolean>(false);
     const [warnung, setWarnung] = useState<boolean>(false);
     const [warnungText, setWarnungText] = useState<string | null>(null);
-    // const exampleDate = dayjs('2024-06-31');
+    // const exampleDate = dayjs('2024-06-01');
     const exampleDate = dayjs();
     const [noData, setNoData] = useState<boolean>(false);
     const [lastScannedId, setLastScannedId] = useState<string>("");
@@ -237,7 +237,7 @@ const App: FC = () => {
                                                         <p className={"days"}><strong>{days[dayjs(entry.startAt).format('ddd')]}</strong> // {dayjs(entry.startAt).format('DD.MM - HH:mm')}</p>
                                                         <p className={"place"}><img src={Vector} alt="Vector" className="Vector" /> &nbsp; &nbsp; &nbsp;  {waitingSpot[entry.waitingSpot]}</p>
                                                     </div>
-                                                    <p className="needs">{entry.description.replace(/#\d+\s*/, '')}</p>
+                                                    <p className="needs">{entry.description}</p>
                                                 </div>
                                             ))
                                     ) : (

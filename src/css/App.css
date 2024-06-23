@@ -326,8 +326,8 @@ img.Vector{
     /*transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;*/
 
     right: 5.5em;
-    top: 10.5em;
-    animation: bounce2 2s ease infinite;
+    top: 9.2em;
+    /*animation: bounce2 2s ease infinite;*/
 }
 
 
@@ -363,10 +363,10 @@ img.Vector{
     position: absolute;
 
     right: 0.2em;
-    top: 11em;
+    top: 10.3em;
     /*transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;*/
 
-    animation: bounce2 2s ease infinite;
+    /*animation: bounce2 2s ease infinite;*/
 
     z-index: 99;
 }
@@ -396,10 +396,10 @@ img.Vector{
     position: absolute;
 
     right: 24.5em;
-    top: 28em;
+    top: 27em;
     /*transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;*/
 
-    animation: bounce2 2s ease infinite;
+    /*animation: bounce2 2s ease infinite;*/
 
     z-index: 99;
 }
@@ -436,10 +436,10 @@ img.Vector{
     position: absolute;
 
     right: 11.5em;
-    top: 17.4em;
+    top: 16.4em;
     /*transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;*/
 
-    animation: bounce2 2s ease infinite;
+    /*animation: bounce2 2s ease infinite;*/
 
     z-index: 99;
 
