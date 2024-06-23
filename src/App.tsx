@@ -30,7 +30,7 @@ const App: FC = () => {
     const waitingSpot: Record<string, string> = {
         bike: "Fahrrad",
         bottle: "Flasche",
-        head: "Hut",
+        hat: "Hut",
         island: "Insel",
         keys: "Schlüssel",
         kitchen: "Küche",
