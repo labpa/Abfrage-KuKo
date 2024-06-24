@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ed3d74e.css",
-    "main.js": "/static/js/main.bbc5596c.js",
+    "main.css": "/static/css/main.71c77c4a.css",
+    "main.js": "/static/js/main.05f972ec.js",
     "static/js/453.da752d82.chunk.js": "/static/js/453.da752d82.chunk.js",
     "static/media/benzel-supporter.png": "/static/media/benzel-supporter.a4f430d2820ab4476dbf.png",
     "static/media/background-image.png": "/static/media/background-image.bfb8588434c1f1ef6d41.png",
@@ -10,12 +10,12 @@
     "static/media/reload-stencil-regular.woff2": "/static/media/reload-stencil-regular.a5e249ad498831a97769.woff2",
     "static/media/inter-v12-latin-regular.woff2": "/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
     "index.html": "/index.html",
-    "main.1ed3d74e.css.map": "/static/css/main.1ed3d74e.css.map",
-    "main.bbc5596c.js.map": "/static/js/main.bbc5596c.js.map",
+    "main.71c77c4a.css.map": "/static/css/main.71c77c4a.css.map",
+    "main.05f972ec.js.map": "/static/js/main.05f972ec.js.map",
     "453.da752d82.chunk.js.map": "/static/js/453.da752d82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ed3d74e.css",
-    "static/js/main.bbc5596c.js"
+    "static/css/main.71c77c4a.css",
+    "static/js/main.05f972ec.js"
   ]
 }
