@@ -36,6 +36,7 @@ const App: FC = () => {
         kitchen: "Küche",
         mic: "Mikro",
         mobile: "Mobile Zellen",
+        null: "bitte erfragen",
         sofa: "Sofa",
         star: "Stern",
         sun: "Sonne",

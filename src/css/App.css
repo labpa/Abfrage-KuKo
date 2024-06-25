@@ -304,7 +304,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid black;
+    border-bottom: 100px solid white;
     position: absolute;
 
 
@@ -320,7 +320,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid black;
+    border-bottom: 100px solid white;
     position: absolute;
 
     /*transition: right 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;*/
@@ -376,7 +376,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid black;
+    border-top: 100px solid white;
     position: absolute;
 
 
@@ -392,7 +392,7 @@ img.Vector{
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid black;
+    border-top: 100px solid white;
     position: absolute;
 
     right: 24.5em;
