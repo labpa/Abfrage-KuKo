@@ -26,6 +26,15 @@ const App: FC = () => {
     const kurz = 3000; // 3 Sekunden -> Abfrage Falsche ID
     const resetTime = 15000; // 15 Sekunden -> Zeit nach der eine ID wieder gescannt werden kann
 
+
+    const weatherUrl = process.env.REACT_APP_OPENWEATHER_URL;
+    const weatherKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
+
+    //API-KEY und URL not active anymore -> todo new KEY and URL
+    // if(!weatherUrl || !weatherKey){
+    //     throw new Error("URL oder API-KEY sind nicht definiert");
+    // }
+
     // Lookup-Tabellen
     const waitingSpot: Record<string, string> = {
         bike: "Fahrrad",
@@ -116,8 +125,8 @@ const App: FC = () => {
 
     //Wetter Daten werden Geladen
     const fetchWeatherData = async () => {
-        const apiKey = '4d1adda53bf636a53408d0cd1c5ba7b4';
-        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+        const apiKey = weatherUrl;
+        const apiUrl = weatherKey;
         const city = 'Lärz';
         const units = 'metric';
 
